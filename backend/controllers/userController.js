@@ -1,11 +1,38 @@
-import { getAllUsers } from '../services/userService.js';
+import User from '../models/userModel.js';
+
+export const createUser = async (req, res) => {
+  try {
+    const { name, email } = req.body;
+    if (!email) {
+      res.status(400).json({ message: 'Please add email.' });
+    }
+
+    const user = await User.create({
+      name,
+      email,
+    });
+
+    if (user) {
+      res.status(201).json({
+        name: user.name,
+        email: user.email,
+      });
+    } else {
+      res.status(500).json({ message: 'Failed to create User' });
+    }
+  } catch (error) {
+    console.error('Error adding User', error);
+    res.status(500).json({ error: 'Internal server error.' });
+  }
+};
 
 export const getUsers = async (req, res) => {
   try {
-    const users = await UserService.getAllUsers();
-    return res.status(200).json(users);
+    const users = await User.find();
+
+    res.status(200).json(users);
   } catch (error) {
-    console.error('Error fetching users:', error);
-    return res.status(500).json({ error: 'Internal Server Error' });
+    console.error('Error adding User', error);
+    res.status(500).json({ error: 'Internal server error.' });
   }
 };
