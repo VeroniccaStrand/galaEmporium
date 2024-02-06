@@ -36,3 +36,16 @@ export const getUsers = async (req, res) => {
     res.status(500).json({ error: 'Internal server error.' });
   }
 };
+
+export const getOneUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if (!user) {
+      res.status(404).json({ message: "User not found." })
+    }
+    res.status(200).json(user)
+  } catch (error) {
+    console.error('Error finding user', error);
+    res.status(500).json({ error: 'Internal server error.' });
+  }
+}
