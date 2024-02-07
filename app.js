@@ -12,7 +12,9 @@ connectDB();
 import userRoutes from './backend/routes/userRoutes.js';
 import eventRoutes from './backend/routes/eventRoutes.js'
 import ticketRoutes from './backend/routes/ticketRoutes.js'
+//import clubRoutes from './backend/routes/clubRoutes.js'
 
+//app.use('/api/clubs', clubRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/tickets', ticketRoutes);

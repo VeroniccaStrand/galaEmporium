@@ -1,18 +1,25 @@
 import mongoose from 'mongoose';
 
 const userSchema = mongoose.Schema({
-  name: {
+  userName: {
     type: String,
   },
   email: {
     type: String,
+    unique: true,
   },
-  address: {
+  password: {
     type: String,
   },
   role: {
     type: String,   
-    required: true,
+    enum: ['Visitor', 'Club Admin', 'Super Admin'],
+    default: 'Visitor',
+  },
+  clubId:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref: 'Club',
+    default:null,
   },
   tickets: [{
     type: mongoose.Schema.Types.ObjectId,
@@ -22,3 +29,5 @@ const userSchema = mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 export default User;
+
+

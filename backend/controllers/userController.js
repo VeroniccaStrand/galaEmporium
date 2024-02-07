@@ -3,21 +3,22 @@ import User from '../models/userModel.js';
 // create
 export const createUser = async (req, res) => {
   try {
-    const { name, email } = req.body;
-    if (!email) {
-      res.status(400).json({ message: 'Please add email.' });
+    const { userName, email, password, role , clubId, tickets } = req.body;
+    if (!userName) {
+      res.status(400).json({ message: 'Please add Username.' });
     }
 
     const user = await User.create({
-      name,
+      userName,
       email,
+      password,
+      role,
+      clubId,
+      tickets
     });
 
     if (user) {
-      res.status(201).json({
-        name: user.name,
-        email: user.email,
-      });
+      res.status(201).json(user);
     } else {
       res.status(500).json({ message: 'Failed to create User' });
     }
