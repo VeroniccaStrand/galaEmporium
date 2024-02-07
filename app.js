@@ -16,4 +16,5 @@ import ticketRoutes from './backend/routes/ticketRoutes.js'
 app.use('/api/users', userRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/tickets', ticketRoutes);
+app.use('/api/tickets/info',ticketRoutes);
 export default app;

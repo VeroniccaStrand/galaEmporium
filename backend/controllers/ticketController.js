@@ -1,4 +1,5 @@
 import Ticket from "../models/ticketModel.js";
+import Event from "../models/eventModel.js";
 
 // create
 export const createTicket = async (req, res) => {
@@ -21,4 +22,18 @@ export const createTicket = async (req, res) => {
     console.error("Error buying ticket", error);
     res.status(500).json({ error: "Internal server error." });
   }
+}
+
+export const ticketInfo = async (req, res) => {
+  const ticket = await Ticket.findById(req.params.id).populate({
+    path:'eventId',
+    select:'name dateTime'
+    
+  })
+
+  res.status(200).json({
+    ticketId: ticket._id,
+    eventName: ticket.eventId.name,
+    eventDateTime: ticket.eventId.dateTime,
+  })
 }
