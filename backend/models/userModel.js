@@ -7,7 +7,18 @@ const userSchema = mongoose.Schema({
   email: {
     type: String,
   },
+  address: {
+    type: String,
+  },
+  role: {
+    type: String,   
+    required: true,
+  },
+  tickets: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Tickets'
+  }]
 });
 
-const User = mongoose.model('user', userSchema);
+const User = mongoose.model('User', userSchema);
 export default User;
