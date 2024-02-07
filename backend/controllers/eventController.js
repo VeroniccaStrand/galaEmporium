@@ -3,8 +3,8 @@ import Event from "../models/eventModel.js";
 export const createEvent = async (req, res) => {
   try {
     const { name, clubId, dateTime, desc, tickets, media, price } = req.body;
-    if (!tickets) {
-      res.status(400).json({ message: "Please missing information." });
+    if (!name || !tickets || !dateTime) {
+      res.status(400).json({ message: "Please add missing information." });
     }
 
     const event = await Event.create({
