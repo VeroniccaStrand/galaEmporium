@@ -30,13 +30,12 @@ export const createTicket = async (req, res) => {
 export const ticketInfo = async (req, res) => {
   const ticket = await Ticket.findById(req.params.id).populate({
     path:'eventId',
-    select:'name dateTime'
-    
+    select:'name dateTime',
+   
+  }).populate({
+    path:'userId',
+    select:'userName'
   })
 
-  res.status(200).json({
-    ticketId: ticket._id,
-    eventName: ticket.eventId.name,
-    eventDateTime: ticket.eventId.dateTime,
-  })
+  res.status(200).json(ticket)
 }
