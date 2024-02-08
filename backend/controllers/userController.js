@@ -1,4 +1,7 @@
 import User from '../models/userModel.js';
+import bcrypt from "bcrypt";
+import jwt from 'jsonwebtoken'
+//const salt = "saltamera";
 
 // create
 export const createUser = async (req, res) => {
@@ -8,10 +11,12 @@ export const createUser = async (req, res) => {
       res.status(400).json({ message: 'Please add Username.' });
     }
 
+
+    const hashedPassword = await bcrypt.hash(password, 10)
     const user = await User.create({
       userName,
       email,
-      password,
+      password:hashedPassword,
       role,
       clubId,
       tickets
@@ -85,3 +90,50 @@ export const updateUser = async (req,res) => {
       res.status(500).json({ error: 'Internal server error.' });
     }
 };
+
+export const loginUser = async (req,res )=>{
+try {
+  const { email , password } = req.body;
+  
+  // hitta användaren
+  const user = await User.findOne({email});
+  //om inte user finns eller inte lösenord matchar
+  if(!user || !(await bcrypt.compare(password, user.password))){
+    return res.status(401).json({message:"invalid email or password"})
+  }
+
+  const token = generateToken(user);
+ let message;
+ switch (user.role) {
+  case 'Vistor':
+    message = 'Logged in as a Visitor'
+    break;
+    case 'Club Admin':
+    message = 'Logged in as a Club Admin'
+    break;
+    case 'Super Admin':
+      message = 'Logged in as a Super Admin'
+      break;
+ }
+ res.status(200).json({message,user,token})
+
+} catch (error) {
+  console.error('Error during login:', error);
+  res.status(500).json({ error: 'Internal server error.' });
+}
+}
+
+
+//Generera token
+export const generateToken = (user) => {
+  const payLoad = {
+    id:user._id,
+    email:user.email,
+    role:user.role,
+  }
+  console.log('token generator', payLoad);
+  const token = jwt.sign(payLoad, process.env.JWT_SECRET, {expiresIn: '2h'})
+
+  return token;
+}
+
