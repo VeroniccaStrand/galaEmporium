@@ -1,5 +1,6 @@
 import Ticket from "../models/ticketModel.js";
 import Event from "../models/eventModel.js";
+import User from "../models/userModel.js"
 
 // create
 export const createTicket = async (req, res) => {
@@ -12,9 +13,11 @@ export const createTicket = async (req, res) => {
       userId, 
       eventId,
     });
-
+    
+    const user = await User.findByIdAndUpdate(userId, { $push: { tickets: ticket._id } }, { new: true });
     if (ticket) {
         res.status(201).json(ticket);
+        
     } else {
       res.status(500).json({ message: "Failed to create ticket" });
     }
