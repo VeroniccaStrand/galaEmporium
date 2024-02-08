@@ -19,7 +19,7 @@ const userSchema = mongoose.Schema({
   clubId:{
     type:mongoose.Schema.Types.ObjectId,
     ref: 'Club',
-    default:null,
+    default: null,
   },
   tickets: [{
     type: mongoose.Schema.Types.ObjectId,

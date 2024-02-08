@@ -47,8 +47,8 @@ export const getOneEvent = async (req, res) => {
     }
     res.status(200).json(event)
   } catch (error) {
-    console.error('Error finding event', error);
-    res.status(500).json({ error: 'Internal server error'});
+    console.error("Error finding event", error);
+    res.status(500).json({ error: "Internal server error"});
   }
 }
 
@@ -59,7 +59,7 @@ export const deleteEvents = async (req, res) => {
       res.status(404).json({ message: "Event not found." });
     }
     await event.deleteOne();
-    return res.status(200).json({ message: "deleted:", id: req.params.id }); // fråga Linu
+    return res.status(200).json({ message: "Deleted:", id: req.params.id }); // fråga Linu
   } catch (error) {
     console.error("Error finding event", error);
     res.status(500).json({ error: "Internal server error." });
@@ -70,14 +70,14 @@ export const updateEvent = async (req,res) => {
   try {
     const event = await Event.findById(req.params.id);
     if (!event) {
-      res.status(404).json({message: 'Event not found.'})
+      res.status(404).json({message: "Event not found."})
     }
     const updatedEvent = await Event.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
     return res.status(200).json(updatedEvent);
     } catch (error){
-      console.error('Error updating Event', error);
-      res.status(500).json({ error: 'Internal server error.' });
+      console.error("Error updating Event", error);
+      res.status(500).json({ error: "Internal server error." });
     }
 };
