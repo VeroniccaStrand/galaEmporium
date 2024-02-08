@@ -1,12 +1,13 @@
 import express from "express";
 import dotenv from "dotenv";
+import cookieParser from 'cookie-parser';
 import connectDB from "./backend/config/db.js";
 import { errorHandler } from "./backend/middleware/errorHandler.js";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
+app.use(cookieParser());
 app.use(errorHandler);
 
 

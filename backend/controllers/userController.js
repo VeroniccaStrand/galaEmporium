@@ -107,6 +107,8 @@ try {
   }
 
   const token = generateToken(user);
+  res.cookie('token', token, { httpOnly: true });
+  
  let message;
  switch (user.role) {
   case 'Vistor':
