@@ -19,6 +19,15 @@ import userRoutes from "./backend/routes/userRoutes.js";
 import eventRoutes from "./backend/routes/eventRoutes.js";
 import ticketRoutes from "./backend/routes/ticketRoutes.js";
 import clubRoutes from "./backend/routes/clubRoutes.js";
+//log out
+
+app.post('/api/logout', (req, res) => {
+  
+  res.clearCookie('token');
+  res.status(200).json({ message: 'Logout successful' });
+ 
+  
+});
 
 
 app.use("/api/clubs", clubRoutes);

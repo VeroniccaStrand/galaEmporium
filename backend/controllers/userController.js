@@ -132,14 +132,23 @@ try {
 
 //Generera token
 export const generateToken = (user) => {
-  const payLoad = {
-    id:user._id,
-    email:user.email,
-    role:user.role,
+  const payload = {
+    id: user._id,
+    email: user.email,
+    role: user.role,
+  };
+
+  if (user.role === 'Club Admin' && user.clubId) {
+    // Konvertera ObjectId till sträng
+    payload.clubId = user.clubId.toString();
   }
-  console.log('token generator', payLoad);
-  const token = jwt.sign(payLoad, process.env.JWT_SECRET, {expiresIn: '2h'})
+
+  console.log('Token generator', payload);
+
+  const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '2h' });
 
   return token;
-}
+};
+
+
 
