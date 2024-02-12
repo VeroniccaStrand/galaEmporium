@@ -1,14 +1,16 @@
 body {
     display: flex;
     flex-direction: column;
-    background-image: url(https://wallpapercave.com/wp/wp2420908.jpg);
-    background-position-x: 40%;
+/*     background-image: url(https://wallpapercave.com/wp/wp2420908.jpg);
+ */    background-position-x: 40%;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
     padding: 0;
+    position: relative;
+    z-index: auto;
 }
 
 header {
@@ -26,26 +28,14 @@ h1 {
 }
 
 
-.logInBtn {
+.userBtn {
     display: flex;
     position: absolute;
     top: 10px;
     right: 15px;
 }
 
-#navScroll {
-    display: flex;
-    overflow: hidden;
-    background-color: #000000;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: black;
-    height: 70px;
-    min-width: fit-content;
-    border-radius: 0px 0px 20px 20px;
-    visibility: hidden;
-}
+
 
 .circleBtn {
     display: flex;

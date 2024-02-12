@@ -1,5 +1,20 @@
-/* non-specific styles */
-@import url("main.css");
 
 /* import pages css */
-@import url("clubPages/starke.css");
+@import url("./pages/home/home.css");
+@import url('./pages/natureNomads/nomads.css');
+/*@import url("pages/dandelionjazzclub.css");*/
+
+#navScroll {
+  display: flex;
+  overflow: hidden;
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  height: 70px;
+  min-width: fit-content;
+  border-radius: 0px 0px 20px 20px;
+  /*     visibility: hidden;
+ */
+}
