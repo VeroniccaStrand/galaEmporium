@@ -7,7 +7,7 @@ export default function home() {
     <nav>
         <!--Log-in button -->
         <!--TODO: länka till en log in sida/pop-up med login? -->
-        <a href="login"><img class="userBtn" src="images/login.png" alt="redigerar in sen" height="50px" width="50px"></a>
+        <a href="#login"><img class="userBtn" src="images/login.png" alt="redigerar in sen" height="50px" width="50px"></a>
     </nav>
 
     <!--Buttons for individual club pages -->
