@@ -1,0 +1,5 @@
+/* non-specific styles */
+@import url("main.css");
+
+/* import pages css */
+@import url("clubPages/starke.css");

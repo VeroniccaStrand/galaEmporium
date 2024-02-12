@@ -1,0 +1,110 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url(https://wallpapercave.com/wp/wp2420908.jpg);
+    background-position-x: 40%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+
+h1 {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 75px;
+}
+
+
+.logInBtn {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+#navScroll {
+    display: flex;
+    overflow: hidden;
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    height: 70px;
+    min-width: fit-content;
+    border-radius: 0px 0px 20px 20px;
+    visibility: hidden;
+}
+
+.circleBtn {
+    display: flex;
+    margin-top: 10px;
+}
+
+h2 {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    margin-left: 25px;
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+#circles {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#calendarContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+#calendarHeader {
+    display: flex;
+    background-color: black;
+    font-weight: bold;
+    width: 700px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px 20px 0px 0px;
+    margin-top: 150px;
+}
+
+h3 {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+#calendar {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    opacity: 0.5;
+    font-weight: bold;
+    width: 700px;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
