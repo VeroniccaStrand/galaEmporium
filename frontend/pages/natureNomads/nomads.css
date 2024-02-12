@@ -1,136 +1,51 @@
-/* Box sizing border-box reset */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Remove default margin and padding */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-dl,
-li,
-dd,
-dt,
-figure,
-blockquote,
-figcaption,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-button,
-textarea,
-select {
-  margin: 0;
-  padding: 0;
-}
-
-/* Remove list styles on ul and ol elements */
-ul,
-ol {
-  list-style: none;
-}
-
-/* Remove hyperlink styles */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Remove default button styles */
-button {
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: none;
-}
-
 :root {
   --ff-english: "IM Fell English SC", serif;
   --ff-poppins: "Poppins", sans-serif;
   --ff-roboto-slab: "Roboto Slab", serif;
   --ff-uncial: "Uncial Antiqua", cursive;
-
-  --fs-small: 0.875rem;
-  --fs-medium: 1.125rem;
-  --fs-large: 2rem;
-  --fs-x-large: 4rem;
-
-  --fw-light: 100;
-  --fw-regular: 400;
-  --fw-bold: 900;
 }
-
-body {
-  font-family: var(--ff-poppins);
-  font-size: var(--fs-medium);
+.header {
+  background-image: url("images/krisjanis-mezulis-__E07WwlywA-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.429);
+  background-blend-mode: multiply;
 }
-.logo {
-  font-size: var(--fs-x-large);
-  font-weight: var(--fw-bold);
-  font-family: var(--ff-english);
-}
-
-.sticky-nav {
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.391);
   padding: 2em;
-  background-color: #0c0c0c84;
   color: #fff;
+  font-family: var(--ff-poppins);
 }
-.nav__items a {
-  position: relative;
-  background-image: linear-gradient(
-    to right top,
-    #ad3621,
-    #ca6658,
-    #e0958e,
-    #efc5c3,
-    #f9f6f6
-  );
-  color: transparent;
-  background-clip: text;
-  margin: 2em;
-  font-weight: var(--fw-bold);
-  transition: all 300ms ease-in-out;
+.logo {
+  font-size: 4rem;
+  margin-left: 0.2em;
+  font-family: var(--ff-english);
 }
+.nav__items {
+  display: flex;
 
-.header {
-  background-image: url("/images/krisjanis-mezulis-__E07WwlywA-unsplash.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: rgba(8, 8, 8, 0.539);
-  background-blend-mode: multiply;
+  gap: 2em;
+  font-size: 1.2rem;
+  margin-right: 2em;
 }
 .hero {
+  color: #fff;
   display: flex;
-  height: 25em;
-  color: #fbfbfb;
   justify-content: space-between;
+  min-height: 28em;
 }
 .hero__intro {
-  font-family: var(--ff-english);
-  font-size: var(--fs-large);
-  font-weight: var(--fw-light);
-  max-width: 30ch;
+  font-size: 1.8rem;
   margin-left: 2em;
   margin-top: 3em;
-  color: #b3b9b6;
+  color: #fff;
+  max-width: 30ch;
+  font-family: var(--ff-english);
 }
 .hero__text {
   max-width: 40ch;
@@ -138,54 +53,17 @@ body {
   margin-bottom: 3em;
   margin-right: 3em;
   line-height: 1.65;
-  font-weight: var(--fw-regular);
+  font-family: var(--ff-poppins);
+
+  padding: 0.5em;
+  font-size: 1.2rem;
 }
 .in__line {
   color: #ad3621;
-  text-transform: uppercase;
-  font-weight: var(--fw-bold);
-  letter-spacing: 1.5px;
-}
-.in__line:hover {
-  text-decoration: underline;
-}
-.event-container {
-  display: grid;
-  justify-content: center;
 }
 .event-info {
-  max-width: 65ch;
-  margin-left: 2em;
+  display: flex;
+  gap: 2em;
 }
-.even {
-  display: grid;
-  grid-template-columns: 1fr 0.6fr;
-  grid-template-rows: minmax(0, 20em);
-  align-items: center;
-}
-.event-image {
-  grid-area: 1 / 2 / 2 / 3;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.event-image img {
-  display: grid;
-  grid-area: auto;
-  width: 100%;
-  height: 100%;
-  padding: 0 4em;
-  object-fit: contain;
-}
-.odd {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: minmax(0, 20em);
-  grid-template-areas: "left right";
-  align-items: center;
-}
-.odd img {
-  display: grid;
-  grid-area: left;
+.event-info {
 }

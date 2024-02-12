@@ -13,7 +13,7 @@ export default function home() {
     <!--Buttons for individual club pages -->
     <div id="circles">
         <!-- TODO: När vi skapat egna klubbar så bytar vi ut dom här mot deras loggor/text med namn/whatever -->
-        <a href="#Nomads"><img src="images/circle.png"
+        <a href="#nomads"><img src="images/circle.png"
                 alt="Veronica klubblogga, redigerar in sen" height="150px" width="150px"></a>
         <a href="#Yacine"><img src="images/circle.png"
                 alt="Yacine klubblogga, redigerar in sen" height="150px" width="150px"></a>

@@ -15,7 +15,7 @@ async function route() {
       $("main").html(home());
       break;
     case "nomads":
-      console.log("Nomads");
+      console.log("nomads");
       $("main").html(await nomads());
       break;
 

@@ -1,20 +1,45 @@
-
 /* import pages css */
 @import url("./pages/home/home.css");
-@import url('./pages/natureNomads/nomads.css');
+@import url("./pages/natureNomads/nomads.css");
 /*@import url("pages/dandelionjazzclub.css");*/
 
+/*SIMPLE RESET CSS*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
 #navScroll {
   display: flex;
-  overflow: hidden;
-  background-color: #000000;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: black;
-  height: 70px;
-  min-width: fit-content;
-  border-radius: 0px 0px 20px 20px;
-  /*     visibility: hidden;
- */
+  justify-content: space-around;
+  align-items: center;
+  background-color: #222;
+  padding: 2em;
+  color: #fff;
 }
