@@ -1,7 +1,7 @@
 function formatDateTime(dateTimeString) {
   const options = {
     day: "numeric",
-    month: "long",
+    month: "short",
     hour: "numeric",
     minute: "numeric",
     hour12: false,
@@ -26,15 +26,15 @@ export default async function nomads() {
         return `
         <div class="event-card ${cardClass}">
           <div class="event-info">
-          <p>${formatDateTime(event.dateTime)}</p>
+          <p class='date-time'>${formatDateTime(event.dateTime)}</p>
           <div class='event-text-wrap'>
-            <h3>${event.name}</h3>
-            <p>${event.desc}</p>
+            <h3 class='event-title'>${event.name}</h3>
+            <p class='event-desc'>${event.desc}</p>
            </div>
             <div class="buy-wrap">
-              <span class="price">Price: ${event.price}</span>
+              <span class="price">Price: ${event.price}kr</span>
               <span class="tickets">Tickets left: ${event.tickets}</span>
-              <button>Buy Ticket</button>
+              <button class='buy-btn'>Buy Ticket</button>
             </div>
           </div>
           
@@ -70,6 +70,7 @@ export default async function nomads() {
           </p>
         </div>
       </header>
+      <h2 class='calender-title'> Upcoming events </h2>
       <div class="event-container">
         ${eventCards}
       </div>
