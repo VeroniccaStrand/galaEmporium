@@ -16,6 +16,7 @@ export const createUser = async (req, res) => {
     if (!userName) {
       res.status(400).json({ message: "Please add Username." });
     }
+    
 
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({
