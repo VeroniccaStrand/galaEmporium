@@ -1,5 +1,6 @@
 import Event from "../models/eventModel.js";
 import jwt from 'jsonwebtoken'
+import { loginUser } from "./userController.js";
 
 export const createEvent = async (req, res) => {
   try {
@@ -44,21 +45,19 @@ export const createEvent = async (req, res) => {
 };
 
 
-export const getEvents = async (req, res) => {
+
+
+export const getEventsWithClubId = async (req, res) => {
   try {
-    const token = req.cookies.token;
+    const { clubId } = req.params; // Använd req.params istället för req.body för att hämta clubId från URL
+    console.log(clubId);
 
-    // Kolla om användaren är autentiserad genom JWT-kakan
-    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-
-    if (!decodedToken || !decodedToken.clubId) {
-      res.status(401).json({ message: "Unauthorized" });
+    if (!clubId) {
+      res.status(400).json({ message: "Bad Request. ClubId is missing in the request parameters." });
       return;
     }
 
-    const clubId = decodedToken.clubId;
-
-    // Hämta endast de evenemang som har samma clubId som användaren
+    // Hämta events baserat på clubId från databasen
     const events = await Event.find({ clubId });
 
     res.status(200).json(events);
@@ -67,6 +66,9 @@ export const getEvents = async (req, res) => {
     res.status(500).json({ error: "Internal server error." });
   }
 };
+
+
+
 
 
 export const getOneEvent = async (req, res) => {
