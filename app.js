@@ -6,6 +6,7 @@ import { errorHandler } from "./backend/middleware/errorHandler.js";
 
 const app = express();
 app.use(express.json());
+//för att använda urlencoded i postman
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
@@ -19,6 +20,15 @@ import userRoutes from "./backend/routes/userRoutes.js";
 import eventRoutes from "./backend/routes/eventRoutes.js";
 import ticketRoutes from "./backend/routes/ticketRoutes.js";
 import clubRoutes from "./backend/routes/clubRoutes.js";
+//log out
+
+app.post('/api/logout', (req, res) => {
+  
+  res.clearCookie('token');
+  res.status(200).json({ message: 'Logout successful' });
+ 
+  
+});
 
 app.use("/api/clubs", clubRoutes);
 app.use("/api/users", userRoutes);

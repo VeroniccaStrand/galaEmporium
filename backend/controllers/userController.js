@@ -130,13 +130,23 @@ export const loginUser = async (req, res) => {
 
 //Generera token
 export const generateToken = (user) => {
-  const payLoad = {
+  const payload = {
     id: user._id,
     email: user.email,
     role: user.role,
   };
-  console.log("token generator", payLoad);
-  const token = jwt.sign(payLoad, process.env.JWT_SECRET, { expiresIn: "2h" });
+
+  if (user.role === 'Club Admin' && user.clubId) {
+    // Konvertera ObjectId till sträng
+    payload.clubId = user.clubId.toString();
+  }
+
+  console.log('Token generator', payload);
+
+  const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '2h' });
 
   return token;
 };
+
+
+

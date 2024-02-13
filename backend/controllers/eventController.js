@@ -1,11 +1,26 @@
 import Event from "../models/eventModel.js";
+import jwt from 'jsonwebtoken'
 
 export const createEvent = async (req, res) => {
   try {
-    const { name, clubId, dateTime, desc, tickets, media, price } = req.body;
+    const { name, dateTime, desc, tickets, media, price } = req.body;
+    const token = req.cookies.token;
+
     if (!name || !tickets || !dateTime) {
       res.status(400).json({ message: "Please add missing information." });
+      return;
     }
+
+    // Kolla om användaren är autentiserad genom JWT-kakan
+    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+
+    // Om användaren inte är autentiserad eller saknar clubId, neka att skapa eventet
+    if (!decodedToken || !decodedToken.clubId) {
+      res.status(401).json({ message: "Unauthorized" });
+      return;
+    }
+
+    const clubId = decodedToken.clubId;
 
     const event = await Event.create({
       name,
@@ -28,16 +43,31 @@ export const createEvent = async (req, res) => {
   }
 };
 
+
 export const getEvents = async (req, res) => {
   try {
-    const events = await Event.find();
+    const token = req.cookies.token;
+
+    // Kolla om användaren är autentiserad genom JWT-kakan
+    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+
+    if (!decodedToken || !decodedToken.clubId) {
+      res.status(401).json({ message: "Unauthorized" });
+      return;
+    }
+
+    const clubId = decodedToken.clubId;
+
+    // Hämta endast de evenemang som har samma clubId som användaren
+    const events = await Event.find({ clubId });
 
     res.status(200).json(events);
   } catch (error) {
-    console.error("Error adding Event", error);
+    console.error("Error fetching events", error);
     res.status(500).json({ error: "Internal server error." });
   }
 };
+
 
 export const getOneEvent = async (req, res) => {
   try {
