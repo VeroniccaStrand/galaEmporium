@@ -6,6 +6,7 @@ import { errorHandler } from "./backend/middleware/errorHandler.js";
 
 const app = express();
 app.use(express.json());
+//för att använda urlencoded i postman
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
