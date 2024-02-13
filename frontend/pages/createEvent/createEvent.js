@@ -1,8 +1,14 @@
 export default function createEventForm() {
   return `
+  <section class='wrap'>
     <div class="create-event-form">
       <form id="createEventForm" onsubmit="submitCreateEventForm(); return false">
         <h1>Create Event</h1>
+        <p class='create__instructions'>
+        Notera: Om det uppstår några problem under processen, 
+        kommer felmeddelanden att visas för att hjälpa dig korrigera 
+        eventuella fel. Tveka inte att kontakta support om du stöter på några problem.
+        </p>
         <label for="eventName">Event Name:</label>
         <input type="text" id="eventName" name="eventName" required />
 
@@ -29,6 +35,7 @@ export default function createEventForm() {
         <input type="submit" id="createEventButton" value="Create Event" />
       </form>
     </div>
+  </section>
   `;
 }
 
@@ -44,7 +51,7 @@ async function submitCreateEventForm() {
     media: $('#eventImage')[0].files[0],
   };
 
-  console.log(data);
+  
 
   try {
     const result = await fetch("api/events", {
