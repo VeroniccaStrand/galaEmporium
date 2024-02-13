@@ -1,6 +1,7 @@
 import home from "/pages/home/home.js";
 import nomads from "/pages/natureNomads/nomads.js";
 import loginForm from "./pages/login/loginReg.js";
+import createEvent from "./pages/createEvent/createEvent.js";
 
 async function route() {
   console.log(location);
@@ -17,6 +18,10 @@ async function route() {
     case "nomads":
       console.log("nomads");
       $("main").html(await nomads());
+      break;
+      case "create":
+      console.log("createEven");
+      $("main").html(createEvent());
       break;
 
     default:
