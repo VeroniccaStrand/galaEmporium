@@ -19,6 +19,8 @@ export default async function nomads() {
     const response = await fetch("http://localhost:3000/api/events");
     const events = await response.json();
 
+    events.sort((a, b) => new Date(b.dateTime) - new Date(a.dateTime));
+
     const eventCards = events
       .map((event, index) => {
         const cardClass = index % 2 === 0 ? "even" : "odd";
