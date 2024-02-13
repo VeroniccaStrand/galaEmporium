@@ -49,8 +49,8 @@ export const createEvent = async (req, res) => {
 
 export const getEventsWithClubId = async (req, res) => {
   try {
-    const { clubId } = req.params; // Använd req.params istället för req.body för att hämta clubId från URL
-    console.log(clubId);
+    const { clubId } = req.params; 
+    
 
     if (!clubId) {
       res.status(400).json({ message: "Bad Request. ClubId is missing in the request parameters." });
