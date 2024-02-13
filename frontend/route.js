@@ -20,7 +20,7 @@ async function route() {
       $("main").html(await nomads());
       break;
       case "create":
-      console.log("createEven");
+      console.log("createEvent");
       $("main").html(createEvent());
       break;
 

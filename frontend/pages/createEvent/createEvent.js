@@ -1,7 +1,7 @@
 export default function createEventForm() {
   return `
     <div class="create-event-form">
-      <form id="createEventForm" onsubmit="createEvent(); return false">
+      <form id="createEventForm" onsubmit="submitCreateEventForm(); return false">
         <h1>Create Event</h1>
         <label for="eventName">Event Name:</label>
         <input type="text" id="eventName" name="eventName" required />
@@ -26,21 +26,22 @@ export default function createEventForm() {
         <label for="eventImage">Event Image:</label>
         <input type="file" id="eventImage" name="eventImage" accept="image/*" />
 
-        <input type="submit" value="Create Event" />
+        <input type="submit" id="createEventButton" value="Create Event" />
       </form>
     </div>
   `;
 }
+
 async function submitCreateEventForm() {
-  console.log("Creating Event");
+  console.log("createEvent function triggered");
 
   const data = {
-    name: $('#createEventForm [name="eventName"]').val(),
-    dateTime: $('#createEventForm [name="dateTime"]').val(),
-    desc: $('#createEventForm [name="eventDescription"]').val(),
-    tickets: $('#createEventForm [name="ticketCount"]').val(),
-    price: $('#createEventForm [name="eventPrice"]').val(),
-    media: $('#createEventForm [name="eventImage"]')[0].files[0],
+    name: $('#eventName').val(),
+    dateTime: $('#dateTime').val(),
+    desc: $('#eventDescription').val(),
+    tickets: $('#ticketCount').val(),
+    price: $('#eventPrice').val(),
+    media: $('#eventImage')[0].files[0],
   };
 
   console.log(data);
@@ -57,13 +58,15 @@ async function submitCreateEventForm() {
     console.log("result", result);
 
     if (result.status === 201) {
-      // Event created successfully, handle as needed
+      
       console.log("Event created successfully");
     } else {
-      // Handle other status codes or errors
+   
       console.error("Failed to create Event");
     }
   } catch (error) {
     console.error("Error creating Event:", error);
   }
 }
+
+window.submitCreateEventForm = submitCreateEventForm;
