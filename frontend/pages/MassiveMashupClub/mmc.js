@@ -14,14 +14,19 @@ function formatDateTime(dateTimeString) {
   return formattedDate;
 }
 
-export default async function massiveMashup(clubId = '65cc999ad4839936bd4d4a5c') {
+export default async function massiveMashup(
+  clubId = "65cc999ad4839936bd4d4a5c"
+) {
   try {
-    const response = await fetch(`http://localhost:3000/api/events/club/${clubId}`, {
-      method: 'GET', // Ändra metoden till GET eftersom du hämtar data
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    const response = await fetch(
+      `http://localhost:3000/api/events/club/${clubId}`,
+      {
+        method: "GET", // Ändra metoden till GET eftersom du hämtar data
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     const events = await response.json();
 
@@ -55,8 +60,8 @@ export default async function massiveMashup(clubId = '65cc999ad4839936bd4d4a5c')
         `;
       })
       .join("");
-       console.log(events);
-      return `
+    console.log(events);
+    return `
       <div id="massive-wrap">
         <header class="massive-header">
         <nav class="massive-nav">
@@ -64,15 +69,18 @@ export default async function massiveMashup(clubId = '65cc999ad4839936bd4d4a5c')
             <span>Massive Mashup Club</span>
           </div>
           <div class="massive-nav__items">
-            <a href="#mmc">home</a>
-            <a href="#">About us</a>
-            <a href="#create">Create Event</a>
-            <a href="#">Contact us</a>
+            <a href="#mmc">HOME</a>
+            <a href="#">ABOUT US</a>
+            <a href="#create">CREATE EVENT</a>
+            <a href="#">CONTACT US</a>
           </div>
         </nav>
         <div class="massive-intro">
-          <p class="pitch__intro">
-            We experiment with sounds nobody has thought of, Slipknot and Spice girls 
+          <p class="pitch__intro-left">
+            We experiment with sounds nobody has thought of!
+          </p>
+          <p class="pitch__intro-right">
+            Slipknot and Spice girls 
             combined? Why not! 
           </p>
           <p class="pitch__text">
@@ -85,8 +93,12 @@ export default async function massiveMashup(clubId = '65cc999ad4839936bd4d4a5c')
         <div class="massive-event-container">
           ${eventCards}
         </div>
+        <div class="massive-about-us>">
+          <p>testing testing testing</p>
+        </div>
       </div>
     `;
+    
   } catch (error) {
     console.error("Error fetching data:", error);
     return "Error fetching data from the database";
