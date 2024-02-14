@@ -1,5 +1,6 @@
 import home from "/pages/home/home.js";
 import nomads from "/pages/natureNomads/nomads.js";
+import massiveMashup from "/pages/MassiveMashupClub/mmc.js";
 import loginForm from "./pages/login/loginReg.js";
 import createEvent from "./pages/createEvent/createEvent.js";
 
@@ -18,6 +19,10 @@ async function route() {
     case "nomads":
       console.log("nomads");
       $("main").html(await nomads());
+      break;
+       case "massiveMashup":
+      console.log("massiveMashup");
+      $("main").html(await massiveMashup());  
       break;
       case "create":
       console.log("createEvent");

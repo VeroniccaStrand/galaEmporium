@@ -1,6 +1,7 @@
 /* import pages css */
 @import url("./pages/home/home.css");
 @import url("./pages/natureNomads/nomads.css");
+@import url("./pages/MassiveMashupClub/mmc.css");
 /*@import url("pages/dandelionjazzclub.css");*/
 @import url("./pages/createEvent/createForm.css");
 /*SIMPLE RESET CSS*/
