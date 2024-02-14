@@ -1,5 +1,6 @@
 import home from "/pages/home/home.js";
 import nomads from "/pages/natureNomads/nomads.js";
+import dandelion from "/pages/dandelionJazzClub/dandelion.js";
 import loginForm from "./pages/login/loginReg.js";
 import createEvent from "./pages/createEvent/createEvent.js";
 
@@ -19,7 +20,11 @@ async function route() {
       console.log("nomads");
       $("main").html(await nomads());
       break;
-      case "create":
+    case "dandelion":
+      console.log("dandelion");
+      $("main").html(await dandelion());
+      break;
+    case "create":
       console.log("createEvent");
       $("main").html(createEvent());
       break;

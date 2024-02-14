@@ -1,7 +1,7 @@
 /* import pages css */
 @import url("./pages/home/home.css");
 @import url("./pages/natureNomads/nomads.css");
-/*@import url("pages/dandelionjazzclub.css");*/
+@import url("pages/dandelionJazzClub/dandelion.css");
 
 /*SIMPLE RESET CSS*/
 *,
@@ -42,4 +42,5 @@ a {
   background-color: #222;
   padding: 2em;
   color: #fff;
+
 }

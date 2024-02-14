@@ -1,0 +1,109 @@
+#dandelionWrap {
+    background-color: black;
+  }
+
+h2 {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    margin-left: 25px;
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    }
+
+#navScroll {
+    display: flex;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    height: 70px;
+    min-width: fit-content;
+    border-radius: 0px 0px 20px 20px;
+}
+
+#clubLogo{
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#dandelionNav{
+    flex-direction: row;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    background-color: transparent;
+    border-radius: 20px 20px 20px 20px;
+    font-weight: bold;
+    width: 700px;
+    height: 50px;
+}
+
+#photoCollection{
+    margin-top: 40px;
+    display: flex;
+    margin-left: 10%;
+}
+
+#dandelionHeader {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: black;
+    height: 250px;
+    min-width: fit-content;
+    border-radius: 0px 0px 20px 20px;
+    margin-top: 60px;
+    border-bottom: 5px solid #f0ff22;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+}
+
+#dandelionAboutHead{
+    display: flex;
+    border-bottom: 5px solid #f0ff22;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+}
+
+
+h3 {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+#dandelionCalendarHead{
+    border-bottom: 5px solid #f0ff22;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+}
+
+
+#dandelionCalendar {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    opacity: 0.5;
+    font-weight: bold;
+    width: 90%;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#dandelionContactHead{
+    border-bottom: 5px solid #f0ff22;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+}
