@@ -44,16 +44,16 @@ export default async function massiveMashup(
 
         return `
           <div class="event-card ${cardClass}">
-            <div class="event-info">
-              <p class='date-time'>${formatDateTime(event.dateTime)}</p>
+            <div class="massive-event-info">
+              <p class='massive-date-time'>${formatDateTime(event.dateTime)}</p>
               <div class='event-text-wrap'>
-                <h3 class='event-title'>${event.name}</h3>
-                <p class='event-desc'>${event.desc}</p>
+                <h3 class='massive-event-title'>${event.name}</h3>
+                <p class='massive-event-desc'>${event.desc}</p>
               </div>
               <div class="buy-wrap">
-                <span class="price">Price: ${event.price}kr</span>
-                <span class="tickets">Tickets left: ${event.tickets}</span>
-                <button class='buy-btn'>Buy Ticket</button>
+                <span class="massive-price">Price: ${event.price}kr</span>
+                <span class="massive-tickets">Tickets left: ${event.tickets}</span>
+                <button class='massive-buy-btn'>Buy Ticket</button>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default async function massiveMashup(
       .join("");
     console.log(events);
     return `
-      <div id="massive-wrap">
+      <div id="massive-wrapper">
         <header class="massive-header">
         <nav class="massive-nav">
           <div class="massive-logo">
@@ -70,7 +70,7 @@ export default async function massiveMashup(
           </div>
           <div class="massive-nav__items">
             <a href="#mmc">HOME</a>
-            <a href="#">ABOUT US</a>
+            <a href="#massive-about-us">ABOUT US</a>
             <a href="#create">CREATE EVENT</a>
             <a href="#">CONTACT US</a>
           </div>
@@ -93,12 +93,17 @@ export default async function massiveMashup(
         <div class="massive-event-container">
           ${eventCards}
         </div>
-        <div class="massive-about-us>">
-          <p>testing testing testing</p>
+        <div id="massive-about-us">
+          <h2 class="massive-aboutus">About us</h2>
+          <p>Since 2002 Massive Mashup Club has been here to please 
+            peoples want and urge for something chaotic. A place were 
+            you can let go of all your problems for a couple of hours.
+            With great music, drinks and foods that will make you become
+            a regular after just one visit.
+          </p>
         </div>
       </div>
     `;
-    
   } catch (error) {
     console.error("Error fetching data:", error);
     return "Error fetching data from the database";
