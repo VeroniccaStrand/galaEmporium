@@ -75,6 +75,7 @@ export default async function whiskey(clubId = "65cc850c06d63a19fc2aa1fd") {
               Whiskey tasting does not need to be pretentious! We want our Whiskey
               and other alochol beverages to be availbale for everyone.
           </div>
+          <button class="event_btn" type="button"> Upcoming Events </button>
       </header>
       <section id="about_us">
         <h1 class="about_us_intro">About us</h1>

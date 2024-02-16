@@ -74,6 +74,10 @@
   }
 }
 
+.event_btn {
+  align-self: center;
+}
+
 #about_us {
   position: relative;
   display: flex;
