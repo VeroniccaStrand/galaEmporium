@@ -72,7 +72,6 @@ export default async function massiveMashup(
             <a href="#mmc">HOME</a>
             <a href="#massive-about-us">ABOUT US</a>
             <a href="#create">CREATE EVENT</a>
-            <a href="#">CONTACT US</a>
           </div>
         </nav>
         <div class="massive-intro">
