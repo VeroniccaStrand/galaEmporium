@@ -63,27 +63,28 @@ export default async function nomads(clubId = "65ca94bb9f5eb98aed7ed0f6") {
     return `
       <div id="wrap">
         <header class="header">
-          <nav class="nav">
-            <div class="logo">
-              <span class="logo">N<span class="in__line">.</span>n</span>
-            </div>
-            <div class="nav__items">
-              <a href="#nomads">Nature Nomads</a>
-              <a href="#">About us</a>
-              <a href="#">Events</a>
-              <a href="#">Contact us</a>
-            </div>
-          </nav>
-          <div class="hero">
-            <p class="hero__intro">
-              .Where the path less traveled is our preferred route
-            </p>
-            <p class="hero__text">
-            Step into the  <a class="in__line" href="">nature Nomads </a> 
-            Club, where we hang out, 
-              hike, and geek out over all things outdoorsy. 
-            </p>
+        <nav class="nav">
+          <div class="logo">
+            <span class="logo">N<span class="in__line">.</span>n</span>
           </div>
+          <div class="nav__items">
+            <a href="#nomads">Nature Nomads</a>
+            <a href="#">About us</a>
+            <a href="#create">Create Event</a>
+            <a href="#">Contact us</a>
+          </div>
+        </nav>
+        <div class="hero">
+          <p class="hero__intro">
+            .Where the path less traveled is our preferred route
+          </p>
+          <p class="hero__text">
+          Step into the  <a class="in__line" href="">nature Nomads </a> 
+          Club, where we hang out, 
+            hike, and geek out over all things outdoorsy. 
+            
+          </p>
+        </div>
       </header>
         <h2 class='calender-title'> Upcoming events </h2>
         <div class="event-container">

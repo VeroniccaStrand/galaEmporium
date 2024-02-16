@@ -3,7 +3,7 @@
 @import url("./pages/natureNomads/nomads.css");
 @import url("./pages/whiskeyTasting/whiskey.css");
 /*@import url("pages/dandelionjazzclub.css");*/
-
+@import url("./pages/createEvent/createForm.css");
 /*SIMPLE RESET CSS*/
 *,
 *::before,

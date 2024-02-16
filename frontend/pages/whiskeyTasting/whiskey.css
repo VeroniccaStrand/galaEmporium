@@ -74,8 +74,14 @@
   }
 }
 
+.event_btn_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .event_btn {
-  align-self: center;
+  width: 20rem;
 }
 
 #about_us {
