@@ -51,6 +51,11 @@
   font-weight: 300;
   padding-right: var(--padding-xlarge);
 }
+.whiskey_nav_links a:hover {
+    color: #00d084;
+    cursor: pointer;
+    transition: .1s ease-in;
+}
 
 .slogan {
   position: relative;
@@ -74,14 +79,23 @@
   }
 }
 
-.event_btn_container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .event_btn {
   width: 20rem;
+  padding: 0.7em 1.3em;
+  margin-top: 6em;
+  background-color: transparent;
+  color: #f5f5f5;
+  font-size: var(--fs-xsmall);
+  border: solid 1px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .2s ease-in,
+  border .2s ease-in;;
+}
+.event_btn:hover {
+  background-color: #00d084;
+  border-color: #00d084;
 }
 
 #about_us {
@@ -104,7 +118,7 @@
   }
 }
 
-.whiskey_calender_title {
+#whiskey_calender_title {
   color: #6b6b6b;
   position: relative;
   font-family: var(--ff-manrope);
@@ -152,21 +166,20 @@
 }
 
 .whiskey_buy_btn {
-  background-image: linear-gradient(to left bottom,
-      #21ad77,
-      #2aa521,
-      #269e26,
-      #2f975c,
-      #4e903c);
+  background-color: #00d084;
   padding: 0.5em 1.2em;
   cursor: pointer;
   border-radius: 0.2em;
   margin-top: 1em;
   box-shadow: 1px 2px 5px rgb(69, 69, 69);
-  color: #f5f5f5;
+  color: #6b6b6b;
 }
 
 .whiskey_buy_btn:hover {
   color: #2f4858;
+  box-shadow: 2px 4px 5px rgb(69, 69, 69);
+  transition: .1s ease-in,
+  border .2s ease-in;
+  ;
 }
 

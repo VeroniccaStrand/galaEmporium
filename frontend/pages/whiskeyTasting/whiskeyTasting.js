@@ -72,11 +72,14 @@ export default async function whiskey(clubId = "65cc850c06d63a19fc2aa1fd") {
           <div class="slogan">
             <h1 class="slogan_intro"> Created unforgetable taste sensations since 1789 </h1>
             <p class="slogan_text">
-              Whiskey tasting does not need to be pretentious! We want our Whiskey
-              and other alochol beverages to be availbale for everyone.
+              Whisky tasting does not need to be pretentious! We want our Whisky
+              and other alcohol beverages to be availbale for everyone.
+            <a href="#whiskey_calender_title">
+              <button class="event_btn" type="button"> See our upcoming events </button>
+            </a>
           </div>
           <div class="event_btn_container">
-            <button class="event_btn" type="button"> Upcoming Events </button>
+          
           </div>
       </header>
       <section id="about_us">
@@ -88,7 +91,7 @@ export default async function whiskey(clubId = "65cc850c06d63a19fc2aa1fd") {
           distinctio pariatur?
         </p>
       </section>
-      <h2 class="whiskey_calender_title">Upcoming events</h2>
+      <h2 id="whiskey_calender_title">Upcoming events</h2>
       <div class="whiskey_event_container">${eventCards}</div>
     </wrapper>
       `;
