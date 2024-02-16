@@ -85,10 +85,9 @@ export default async function whiskey(clubId = "65cc850c06d63a19fc2aa1fd") {
       <section id="about_us">
         <h1 class="about_us_intro">About us</h1>
         <p class="about_us_text">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat
-          repellat eius, quos ab maxime fuga ratione quisquam, hic possimus
-          dignissimos dolorum laudantium earum cum enim laboriosam culpa nam
-          distinctio pariatur?
+          Established in 1789, McGavin's Whiskey Club was a clandestine sanctuary for devotees of the golden elixir. 
+          Hidden in the heart of a forgotten town, its dimly lit halls echoed with laughter and the clink of glasses. 
+          Though long dissolved, whispers of its legendary gatherings still drift through time, a toast to an ageless spirit.
         </p>
       </section>
       <h2 id="whiskey_calender_title">Upcoming events</h2>
