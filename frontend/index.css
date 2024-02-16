@@ -2,7 +2,7 @@
 @import url("./pages/home/home.css");
 @import url("./pages/natureNomads/nomads.css");
 @import url("pages/dandelionJazzClub/dandelion.css");
-
+@import url("./pages/createEvent/createForm.css");
 /*SIMPLE RESET CSS*/
 *,
 *::before,
