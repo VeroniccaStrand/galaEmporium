@@ -76,8 +76,8 @@ export default async function whiskey(clubId = "65cc850c06d63a19fc2aa1fd") {
               and other alochol beverages to be availbale for everyone.
           </div>
           <div class="event_btn_container">
-          <button class="event_btn" type="button"> Upcoming Events </button>
-    </div>
+            <button class="event_btn" type="button"> Upcoming Events </button>
+          </div>
       </header>
       <section id="about_us">
         <h1 class="about_us_intro">About us</h1>
@@ -97,3 +97,4 @@ export default async function whiskey(clubId = "65cc850c06d63a19fc2aa1fd") {
     return "Error fetching data from the database";
   }
 }
+console.log();
