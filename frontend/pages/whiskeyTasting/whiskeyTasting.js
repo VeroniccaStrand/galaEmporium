@@ -87,11 +87,6 @@ export default async function whiskey(clubId = "65cc850c06d63a19fc2aa1fd") {
       </section>
       <h2 class="whiskey_calender_title">Upcoming events</h2>
       <div class="whiskey_event_container">${eventCards}</div>
-      <footer>
-        <h2>Contact Us</h2>
-        <span>John McGavin</span>
-        <span>Email</span>
-      </footer>
     </wrapper>
       `;
   } catch (error) {
