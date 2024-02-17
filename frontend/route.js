@@ -1,5 +1,6 @@
 import home from "/pages/home/home.js";
 import nomads from "/pages/natureNomads/nomads.js";
+import comedyClub from "./pages/comedyClub/comedyClub.js";
 import loginForm from "./pages/login/loginReg.js";
 import createEvent from "./pages/createEvent/createEvent.js";
 

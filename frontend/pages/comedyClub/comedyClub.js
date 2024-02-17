@@ -14,8 +14,8 @@ function formatDateTime(dateTimeString) {
     return formattedDate;
   }
   
-  export default async function massiveMashup(
-    clubId = "65cc999ad4839936bd4d4a5c"
+  export default async function comedyClub(
+    clubId = "65cf58a9b0b90da0c98c308e"
   ) {
     try {
       const response = await fetch(
