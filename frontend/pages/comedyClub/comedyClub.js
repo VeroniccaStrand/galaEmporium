@@ -14,9 +14,7 @@ function formatDateTime(dateTimeString) {
     return formattedDate;
   }
   
-  export default async function comedyClub(
-    clubId = "65cf58a9b0b90da0c98c308e"
-  ) {
+  export default async function comedyClub(clubId = "65cf58a9b0b90da0c98c308e") {
     try {
       const response = await fetch(
         `http://localhost:3000/api/events/club/${clubId}`,
@@ -62,7 +60,7 @@ function formatDateTime(dateTimeString) {
       .join("");
 
     console.log(events);
-    return `
+    return 
       <div id="wrap">
         <header class="header">
         <nav class="nav">
@@ -72,7 +70,7 @@ function formatDateTime(dateTimeString) {
             <a href="#create">Create Event</a>
             <a href="#">Contact us</a>
           </div>
-        </nav>>
+        </nav>
         <div class="hero">
           <p class="banner">
             The Comedy Club
@@ -93,7 +91,7 @@ function formatDateTime(dateTimeString) {
           ${eventCards}
         </div>
       </div>
-      `;
+      ;
     } catch (error) {
       console.error("Error fetching data:", error);
       return "Error fetching data from the database";
