@@ -1,0 +1,164 @@
+:root {
+    --fs-small: 1.2rem;
+    --fs-medium: 1.8rem;
+    --fs-large: 2.2rem;
+    --fs-xlarge: 4rem;
+  
+    --padding-small: 0.5em;
+    --padding-medium: 2em;
+    --padding-large: 3em;
+  
+    --margin-small: 0.5em;
+    --margin-medium: 1em;
+    --margin-large: 2em;
+  
+    --ff-english: "IM Fell English SC", serif;
+    --ff-poppins: "Poppins", sans-serif;
+    --ff-roboto-slab: "Roboto Slab", serif;
+    --ff-uncial: "Uncial Antiqua", cursive;
+  }
+  .header {
+    background-image: url(images/pexels-shonejai-1227511.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.429);
+    background-blend-mode: multiply;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.391);
+    padding: var(--padding-medium);
+    color: #f5f5f5;
+    font-family: var(--ff-roboto-slab);
+  }
+
+  .nav__items {
+    display: flex;
+    background-clip: text;
+    color: black;
+    gap: 2em;
+    font-size: var(--fs-small);
+    margin-right: var(--margin-large);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .hero {
+    position: relative;
+    z-index: 2;
+    color: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    min-height: 28em;
+  }
+  .banner {
+    font-size: var(--fs-xlarge);
+    margin-left: var(--margin-large);
+    color: #232121;
+  }
+  .slogan {
+    font-size: var(--fs-medium);
+    margin-left: var(--margin-large);
+    margin-top: var(--margin-large);
+    color: #d9b41e;
+    max-width: 30ch;
+    font-family: var(--ff-english);
+    text-shadow: 5px 5px 10px #000000;
+  }
+  .description {
+    position: relative;
+  
+    max-width: 40ch;
+    align-self: flex-end;
+    margin-bottom: var(--margin-large);
+    margin-right: var(--margin-large);
+    line-height: 1.65;
+    font-family: var(--ff-english);
+  
+    padding: var(--padding-small);
+    font-size: var(--fs-small);
+  }
+  .descriptiont::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    z-index: -1;
+  }
+
+  .calender-title {
+    position: relative;
+    font-family: var(--ff-poppins);
+    text-transform: uppercase;
+    margin-left: var(--margin-large);
+    margin-top: var(--margin-large);
+  }
+  .calender-title::after {
+    position: absolute;
+    content: "";
+    width: 2em;
+    height: 5px;
+    left: 0;
+    bottom: 0;
+  
+    background-color: #906b3c;
+  }
+  .event-container {
+    margin: var(--margin-large);
+    padding: var(--padding-medium);
+    border: solid 2px black;
+    font-family: var(--ff-poppins);
+  }
+  .event-title {
+    font-family: var(--ff-english);
+    font-size: var(--fs-large);
+    letter-spacing: 1.5px;
+    color: #2f4858;
+  }
+  .event-info {
+    display: grid;
+    grid-template-columns: minmax(0, 8em) 1fr minmax(0, 8em);
+    align-items: center;
+    padding-bottom: var(--padding-medium);
+    column-gap: 2em;
+    margin-top: var(--margin-large);
+    border-bottom: #060606 solid 0.5px;
+  }
+  .event-desc {
+    font-weight: 100;
+    line-height: 1.65;
+    color: #2f4858;
+  }
+  .date-time {
+    padding: var(--padding-small);
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-align: center;
+  
+    color: #2f4858;
+  }
+  .buy-btn {
+    background-image: linear-gradient(
+      to left bottom,
+      #ad3621,
+      #a54821,
+      #9e5626,
+      #97612f,
+      #906b3c
+    );
+    padding: 0.5em 1.2em;
+    cursor: pointer;
+    border-radius: 0.2em;
+    margin-top: 1em;
+    box-shadow: 1px 2px 5px rgb(69, 69, 69);
+    color: #f5f5f5;
+  }
+  .buy-btn:hover {
+    color: #2f4858;
+  }
