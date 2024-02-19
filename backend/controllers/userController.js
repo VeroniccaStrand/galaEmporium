@@ -16,7 +16,6 @@ export const createUser = async (req, res) => {
     if (!userName) {
       res.status(400).json({ message: "Please add Username." });
     }
-    
 
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({
@@ -137,17 +136,14 @@ export const generateToken = (user) => {
     role: user.role,
   };
 
-  if (user.role === 'Club Admin' && user.clubId) {
+  if (user.role === "Club Admin" && user.clubId) {
     // Konvertera ObjectId till sträng
     payload.clubId = user.clubId.toString();
   }
 
-  console.log('Token generator', payload);
+  console.log("Token generator", payload);
 
-  const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '2h' });
+  const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "2h" });
 
   return token;
 };
-
-
-

@@ -1,5 +1,7 @@
 import home from "/pages/home/home.js";
 import nomads from "/pages/natureNomads/nomads.js";
+import massiveMashup from "/pages/MassiveMashupClub/mmc.js";
+import whiskey from "./pages/whiskeyTasting/whiskeyTasting.js";
 import comedyClub from "./pages/comedyClub/comedyClub.js";
 import loginForm from "./pages/login/loginReg.js";
 import createEvent from "./pages/createEvent/createEvent.js";
@@ -19,6 +21,16 @@ async function route() {
     case "nomads":
       console.log("nomads");
       $("main").html(await nomads());
+      break;
+       case "massiveMashup":
+      console.log("massiveMashup");
+      $("main").html(await massiveMashup());  
+      break;
+    case "whiskey":
+      console.log("whiskey");
+      $("main").html(await whiskey());
+      break;
+    case "create":
       break;
     case "comedyClub":
         console.log("comedyClub");

@@ -1,0 +1,185 @@
+:root {
+  --fs-xsmall: 1rem;
+  --fs-small: 1.2rem;
+  --fs-medium: 1.8rem;
+  --fs-large: 2.2rem;
+  --fs-xlarge: 3rem;
+
+  --padding-small: 0.5em;
+  --padding-medium: 2em;
+  --padding-large: 3em;
+  --padding-xlarge: 8em;
+
+  --margin-small: 0.5em;
+  --margin-medium: 1em;
+  --margin-large: 2em;
+  --margin-xlarge: 10em;
+
+  --ff-manrope: "Manrope", sans-serif;
+}
+
+.whiskey_header {
+  background-image: url(images/header-1087x1000.jpg);
+  background-position: center;
+  background-size: cover;
+  margin: var(--margin-medium);
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.150);
+  background-blend-mode: multiply;
+  font-family: var(--ff-manrope);
+} 
+
+.whiskey_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding-large);
+  color: #f5f5f5;
+}
+
+.whiskey_logo {
+  font-size: var(--fs-xsmall);
+  font-weight: 700;
+  padding-left: var(--padding-medium);
+}
+
+.whiskey_nav_links {
+  display: flex;
+  gap: 2rem;
+  font-size: var(--fs-xsmall);
+  text-transform: uppercase;
+  font-weight: 300;
+  padding-right: var(--padding-xlarge);
+}
+.whiskey_nav_links a:hover {
+    color: #00d084;
+    cursor: pointer;
+    transition: .1s ease-in;
+}
+
+.slogan {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  min-height: 50em;
+  color: #f5f5f5;
+  .slogan_intro {
+    font-size: var(--fs-xlarge);
+    text-align: center;
+    width: 40%;
+  }
+  .slogan_text {
+    font-size: var(--fs-small);
+    text-align: center;
+    width: 50%;
+  }
+}
+
+.event_btn {
+  width: 20rem;
+  padding: 0.7em 1.3em;
+  margin-top: 6em;
+  background-color: transparent;
+  color: #f5f5f5;
+  font-size: var(--fs-xsmall);
+  border: solid 1px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .2s ease-in,
+  border .2s ease-in;;
+}
+.event_btn:hover {
+  background-color: #00d084;
+  border-color: #00d084;
+}
+
+#about_us {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  color: #6b6b6b;
+  margin-top: var(--margin-xlarge);
+  .about_us_intro {
+    font-size: var(--fs-xlarge);
+    text-align: center;
+  }
+  .about_us_text {
+    font-size: var(--fs-small);
+    text-align: center;
+    width: 50%;
+  }
+}
+
+#whiskey_calender_title {
+  color: #6b6b6b;
+  position: relative;
+  font-family: var(--ff-manrope);
+  text-transform: uppercase;
+  margin-left: var(--margin-large);
+  margin-top: var(--margin-large);
+}
+
+.whiskey_calender_title::after {
+  position: absolute;
+  content: "";
+  width: 2em;
+  height: 5px;
+  left: 0;
+  bottom: 0;
+
+  background-color: #3c904d;
+}
+
+.whiskey_event_container {
+  color: #6b6b6b;
+  margin: var(--margin-large);
+  padding: var(--padding-medium);
+  border: solid 2px black;
+  font-family: var(--ff-manropes);
+}
+
+.whiskey_event_title {
+  font-size: var(--fs-large);
+  letter-spacing: 1.5px;
+}
+
+.whiskey_event_desc {
+  font-weight: 100;
+  line-height: 1.65;
+  color: #6b6b6b;
+}
+.whiskey_date_time {
+  padding: var(--padding-small);
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-align: center;
+
+  color: #6b6b6b;
+}
+
+.whiskey_buy_btn {
+  background-color: #00d084;
+  padding: 0.5em 1.2em;
+  cursor: pointer;
+  border-radius: 0.2em;
+  margin-top: 1em;
+  box-shadow: 1px 2px 5px rgb(69, 69, 69);
+  color: #6b6b6b;
+}
+
+.whiskey_buy_btn:hover {
+  color: #2f4858;
+  box-shadow: 2px 4px 5px rgb(69, 69, 69);
+  transition: .1s ease-in,
+  border .2s ease-in;
+  ;
+}
+
