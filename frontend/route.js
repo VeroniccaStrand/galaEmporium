@@ -20,10 +20,11 @@ async function route() {
       console.log("nomads");
       $("main").html(await nomads());
       break;
-      case "comedyClub":
-        console.log("Comedy Club");
+    case "comedyClub":
+        console.log("comedyClub");
         $("main").html(await comedyClub());
-      case "create":
+        break;
+    case "create":
       console.log("createEvent");
       $("main").html(createEvent());
       break;

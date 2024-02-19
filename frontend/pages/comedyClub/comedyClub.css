@@ -32,7 +32,7 @@
     background-color: rgba(0, 0, 0, 0.391);
     padding: var(--padding-medium);
     color: #f5f5f5;
-    font-family: var(--ff-poppins);
+    font-family: var(--ff-roboto-slab);
   }
 
   .nav__items {

@@ -14,7 +14,7 @@ function formatDateTime(dateTimeString) {
     return formattedDate;
   }
   
-  export default async function comedyClub(clubId = "65cf58a9b0b90da0c98c308e") {
+  export default async function comedyClub(clubId = '65cf58a9b0b90da0c98c308e') {
     try {
       const response = await fetch(
         `http://localhost:3000/api/events/club/${clubId}`,
@@ -36,11 +36,10 @@ function formatDateTime(dateTimeString) {
   
       events.sort((a, b) => new Date(b.dateTime) - new Date(a.dateTime));
   
-      const eventCards = events
-        .map((event, index) => {
+      const eventCards = events.map((event, index) => {
           const cardClass = index % 2 === 0 ? "even" : "odd";
   
-          return `
+        return `
           <div class="event-card ${cardClass}">
             <div class="event-info">
               <p class='date-time'>${formatDateTime(event.dateTime)}</p>
@@ -60,7 +59,7 @@ function formatDateTime(dateTimeString) {
       .join("");
 
     console.log(events);
-    return 
+    return ` 
       <div id="wrap">
         <header class="header">
         <nav class="nav">
@@ -91,7 +90,7 @@ function formatDateTime(dateTimeString) {
           ${eventCards}
         </div>
       </div>
-      ;
+    `;
     } catch (error) {
       console.error("Error fetching data:", error);
       return "Error fetching data from the database";
