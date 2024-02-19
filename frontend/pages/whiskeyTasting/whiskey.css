@@ -17,6 +17,10 @@
 
   --ff-manrope: "Manrope", sans-serif;
 }
+.w_wrapper {
+  background-color: white;
+
+}
 
 .whiskey_header {
   background-image: url(images/header-1087x1000.jpg);
