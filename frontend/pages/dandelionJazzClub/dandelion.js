@@ -73,8 +73,12 @@ export default async function dandelion(clubId = '65cc8a73e536d3509bd17b59') {
             <div id="dandelionNav">
                 <a href="#dandelionAboutHead"> <img src="pages/dandelionJazzClub/images/about.png" height="100px" width="181px"></a>
                 <a href="#dandelionCalendarHead"> <img src="pages/dandelionJazzClub/images/events.png" height="100px" width="201px"></a>
-                <a href="#dandelionContactHead"> <img  src="pages/dandelionJazzClub/images/contact.png" height="100px" width="220px"></a>
+                <a href="#dandelionContactHead"> <img src="pages/dandelionJazzClub/images/contact.png" height="100px" width="220px"></a>
             </div>
+
+
+            <a href="#create" id="dandelionCreate"> <img src="pages/dandelionJazzClub/images/createevent.png" height="100px" width="403px"></a>
+
 
             <div id="photoCollection">
                 <img class="dandelionPic" src="pages/dandelionJazzClub/images/djc1.jpeg" alt="Club" height="100px" width="350px" ></a>

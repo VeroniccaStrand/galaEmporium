@@ -40,11 +40,21 @@
 #dandelionNav {
     flex-direction: row;
     display: flex;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px 20px 20px 20px;
-    font-weight: bold;
-    width: 700px;
+    width: 400px;
+    height: 50px;
+}
+
+#dandelionCreate {
+    flex-direction: row;
+    display: flex;
+    margin-left: auto;
+    margin-top: -55px;
+    border-radius: 20px 20px 20px 20px;
+    width: 200px;
     height: 50px;
 }
 

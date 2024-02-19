@@ -5,6 +5,7 @@ import whiskey from "./pages/whiskeyTasting/whiskeyTasting.js";
 import comedyClub from "./pages/comedyClub/comedyClub.js";
 import loginForm from "./pages/login/loginReg.js";
 import createEvent from "./pages/createEvent/createEvent.js";
+import dandelion from "./pages/dandelionJazzClub/dandelion.js";
 
 async function route() {
   console.log(location);
@@ -29,8 +30,6 @@ async function route() {
     case "whiskey":
       console.log("whiskey");
       $("main").html(await whiskey());
-      break;
-    case "create":
       break;
     case "comedyClub":
       console.log("comedyClub");
