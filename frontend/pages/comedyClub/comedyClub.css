@@ -17,8 +17,12 @@
     --ff-roboto-slab: "Roboto Slab", serif;
     --ff-uncial: "Uncial Antiqua", cursive;
   }
-  .comedy_
-  header {
+
+  .comedy_wrap {
+    background-image: url(images/pexels-shonejai-1227511.jpg);
+  }
+
+  .comedy_header {
     background-image: url(images/pexels-shonejai-1227511.jpg);
     background-repeat: no-repeat;
     background-position: center;

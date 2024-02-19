@@ -73,14 +73,14 @@ export default async function whiskey(clubId = "65cc850c06d63a19fc2aa1fd") {
             <h1 class="slogan_intro"> Created unforgetable taste sensations since 1789 </h1>
             <p class="slogan_text">
               Whisky tasting does not need to be pretentious! We want our Whisky
-              and other alcohol beverages to be availbale for everyone.
+              and other alcohol beverages to be availbale for everyone. </p>
             <a href="#whiskey_calender_title">
               <button class="event_btn" type="button"> See our upcoming events </button>
             </a>
           </div>
-          <div class="event_btn_container">
+         
           
-          </div>
+          
       </header>
       <section id="about_us">
         <h1 class="about_us_intro">About us</h1>
