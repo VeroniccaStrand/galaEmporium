@@ -16,15 +16,15 @@ async function route() {
       break;
     case "":
       console.log("home");
-      $("main").html(home());
+      $("main").html(await home());
       break;
     case "nomads":
       console.log("nomads");
       $("main").html(await nomads());
       break;
-       case "massiveMashup":
+    case "massiveMashup":
       console.log("massiveMashup");
-      $("main").html(await massiveMashup());  
+      $("main").html(await massiveMashup());
       break;
     case "whiskey":
       console.log("whiskey");
@@ -33,9 +33,9 @@ async function route() {
     case "create":
       break;
     case "comedyClub":
-        console.log("comedyClub");
-        $("main").html(await comedyClub());
-        break;
+      console.log("comedyClub");
+      $("main").html(await comedyClub());
+      break;
     case "create":
       console.log("createEvent");
       $("main").html(createEvent());

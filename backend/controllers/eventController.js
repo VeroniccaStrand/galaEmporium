@@ -49,11 +49,9 @@ export const getEventsWithClubId = async (req, res) => {
     const { clubId } = req.params;
 
     if (!clubId) {
-      res
-        .status(400)
-        .json({
-          message: "Bad Request. ClubId is missing in the request parameters.",
-        });
+      res.status(400).json({
+        message: "Bad Request. ClubId is missing in the request parameters.",
+      });
       return;
     }
 
@@ -77,6 +75,17 @@ export const getOneEvent = async (req, res) => {
   } catch (error) {
     console.error("Error finding event", error);
     res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+export const getAllEvents = async (req, res) => {
+  try {
+    const events = await Event.find().populate("clubId", "name");
+
+    res.status(200).json(events);
+  } catch (error) {
+    console.error("Error getting events", error);
+    res.status(500).json({ error: "Internal server error." });
   }
 };
 
