@@ -67,7 +67,7 @@ export default async function nomads(clubId = '65ca94bb9f5eb98aed7ed0f6') {
           <div class="nav__items">
             <a href="#nomads">Nature Nomads</a>
             <a href="#">About us</a>
-            <a href="#">Events</a>
+            <a href="#create">Create Event</a>
             <a href="#">Contact us</a>
           </div>
         </nav>
