@@ -51,9 +51,11 @@ export default async function nomads(clubId = "65ca94bb9f5eb98aed7ed0f6") {
                 <p class='nomad-event-desc'>${event.desc}</p>
               </div>
               <div class="nomad-buy-wrap"> 
+              <div>
                 <span class="nomad-price">Price: ${event.price}kr</span>
                 <span class="nomad-tickets">Tickets left: ${event.tickets}</span>
-                <button onclick="buyTicket('${event._id}')" class='nomad-buy-btn'>Buy Ticket</button>
+                </div>
+                <button onclick="buyTicket('${event._id}')" class='nomad-buy-btn'>Book Ticket</button>
               </div>
             </div>
           </div>
@@ -69,21 +71,12 @@ export default async function nomads(clubId = "65ca94bb9f5eb98aed7ed0f6") {
     </p>
     <header class="nomad-header">
   
-
-        <p class="nomad-hero__text">
-          Step into the <a class="nomad-in__line" href="">nature Nomads </a>
-          Club, where we hang out, hike, and geek out over all things outdoorsy.
-          Immerse yourself in a community passionate about exploring the wonders
-          of nature, planning exhilarating hikes, and engaging in insightful
-          conversations about mountain safety.
-        </p>
+    
     
     </header>
 
   <nav class="nomad-nav">
-    <div class="nomad-logo">
-      <span class="nomad-logo">N<span class="in__line">.</span>n</span>
-    </div>
+
     <div class="nomad-nav__items">
       <a href="#nomads">Nature Nomads</a>
       <a href="#">About us</a>
@@ -91,6 +84,15 @@ export default async function nomads(clubId = "65ca94bb9f5eb98aed7ed0f6") {
       <a href="#">Contact us</a>
     </div>
   </nav>
+   
+
+  <p class="nomad-hero__text">
+  Step into the <a class="nomad-in__line" href="">nature Nomads </a>
+  Club, where we hang out, hike, and geek out over all things outdoorsy.
+  Immerse yourself in a community passionate about exploring the wonders
+  of nature, planning exhilarating hikes, and engaging in insightful
+  conversations about mountain safety.
+</p>
   <h2 class="nomad-calender-title">Upcoming events</h2>
   <div class="nomad-event-container">${eventCards}</div>
 </div>
