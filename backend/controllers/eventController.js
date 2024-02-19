@@ -1,5 +1,5 @@
 import Event from "../models/eventModel.js";
-import jwt from 'jsonwebtoken'
+import jwt from "jsonwebtoken";
 import { loginUser } from "./userController.js";
 
 export const createEvent = async (req, res) => {
@@ -44,16 +44,16 @@ export const createEvent = async (req, res) => {
   }
 };
 
-
-
-
 export const getEventsWithClubId = async (req, res) => {
   try {
-    const { clubId } = req.params; 
-    
+    const { clubId } = req.params;
 
     if (!clubId) {
-      res.status(400).json({ message: "Bad Request. ClubId is missing in the request parameters." });
+      res
+        .status(400)
+        .json({
+          message: "Bad Request. ClubId is missing in the request parameters.",
+        });
       return;
     }
 
@@ -67,22 +67,18 @@ export const getEventsWithClubId = async (req, res) => {
   }
 };
 
-
-
-
-
 export const getOneEvent = async (req, res) => {
   try {
     const event = await Event.findById(req.params.id);
     if (!event) {
-      res.status(404).json({ message: "Event not found." })
+      res.status(404).json({ message: "Event not found." });
     }
-    res.status(200).json(event)
+    res.status(200).json(event);
   } catch (error) {
     console.error("Error finding event", error);
-    res.status(500).json({ error: "Internal server error"});
+    res.status(500).json({ error: "Internal server error" });
   }
-}
+};
 
 export const deleteEvents = async (req, res) => {
   try {
@@ -98,18 +94,22 @@ export const deleteEvents = async (req, res) => {
   }
 };
 
-export const updateEvent = async (req,res) => {
+export const updateEvent = async (req, res) => {
   try {
     const event = await Event.findById(req.params.id);
     if (!event) {
-      res.status(404).json({message: "Event not found."})
+      res.status(404).json({ message: "Event not found." });
     }
-    const updatedEvent = await Event.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-    });
+    const updatedEvent = await Event.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+      }
+    );
     return res.status(200).json(updatedEvent);
-    } catch (error){
-      console.error("Error updating Event", error);
-      res.status(500).json({ error: "Internal server error." });
-    }
+  } catch (error) {
+    console.error("Error updating Event", error);
+    res.status(500).json({ error: "Internal server error." });
+  }
 };

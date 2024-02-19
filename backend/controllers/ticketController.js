@@ -30,6 +30,7 @@ export const createTicket = async (req, res) => {
     res.status(500).json({ error: "Internal server error." });
   }
 };
+};
 
 export const ticketInfo = async (req, res) => {
   const ticket = await Ticket.findById(req.params.id)
@@ -41,6 +42,18 @@ export const ticketInfo = async (req, res) => {
       path: "userId",
       select: "userName",
     });
+  const ticket = await Ticket.findById(req.params.id)
+    .populate({
+      path: "eventId",
+      select: "name dateTime",
+    })
+    .populate({
+      path: "userId",
+      select: "userName",
+    });
+
+  res.status(200).json(ticket);
+};
 
   res.status(200).json(ticket);
 };
