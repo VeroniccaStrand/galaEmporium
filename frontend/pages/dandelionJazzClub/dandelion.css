@@ -43,7 +43,6 @@
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 20px 20px 20px 20px;
     width: 400px;
     height: 50px;
 }
@@ -53,8 +52,7 @@
     display: flex;
     margin-left: auto;
     margin-top: -55px;
-    border-radius: 20px 20px 20px 20px;
-    width: 200px;
+     width: 200px;
     height: 50px;
 }
 
@@ -72,6 +70,8 @@
     border-bottom: 3px solid #f0ff22;
     border-left: 150px solid transparent;
     border-right: 150px solid transparent;
+    padding-top: 125px;
+    margin-top: -125px;
 }
 
 #dandelionAbout {
@@ -89,6 +89,8 @@
     border-bottom: 3px solid #f0ff22;
     border-left: 150px solid transparent;
     border-right: 150px solid transparent;
+    padding-top: 125px;
+    margin-top: -125px;
 }
 
 
