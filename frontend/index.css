@@ -4,8 +4,8 @@
 @import url("./pages/MassiveMashupClub/mmc.css");
 @import url("./pages/whiskeyTasting/whiskey.css");
 @import url("./pages/comedyClub/comedyClub.css");
-/*@import url("pages/dandelionjazzclub.css");*/
 @import url("./pages/createEvent/createForm.css");
+@import url("./pages/login/loginReg.css");
 
 /*SIMPLE RESET CSS*/
 *,
@@ -59,7 +59,7 @@ body {
 #navScroll {
   color: white;
   display: flex;
-
+  z-index: 1;
   position: sticky;
   top: 0;
   width: 100%;

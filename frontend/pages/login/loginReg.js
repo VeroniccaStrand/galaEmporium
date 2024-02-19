@@ -4,7 +4,7 @@ export default function loginForm() {
     <div id=loginDiv> 
       <form id="loginForm" onsubmit="login(); return false">
         <h1>Login</h1>
-        <input type="text" name="email" placeholder="Enter your Email">
+        <input type="text" name="email" placeholder="Enter your email">
         <input type="password" id="password" minlength="3" placeholder="Enter password">
         <input type="submit" id="loginButton" value="Login"/>
       </form>
