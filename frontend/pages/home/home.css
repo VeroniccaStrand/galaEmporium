@@ -1,0 +1,36 @@
+main{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    color: white;
+    font-family: "Oswald", sans-serif;
+    font-size: larger;
+}
+
+#title{
+    color: white;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+#circles{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#calendar {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    opacity: 0.5;
+    font-weight: bold;
+    width: 1000px;
+    height: 700px;
+    margin-top: 150px;
+}
