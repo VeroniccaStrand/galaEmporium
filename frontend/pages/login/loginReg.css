@@ -1,57 +1,57 @@
 #loginRegWrap{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: white;
-    font-family: "Oswald", sans-serif;
-    margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  margin-top: 50px;
 }
 
 input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-  }
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
 
-  input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-  }
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
 
 #loginDiv{
-    display: flex;
-    background-color: rgb(0, 0, 0);
-    height: 500px;
-    width: 500px;
-    margin: 100px;
-    padding: 25px;
+  display: flex;
+  background-color: rgb(0, 0, 0);
+  height: 500px;
+  width: 500px;
+  margin: 100px;
+  padding: 25px;
 }
 
 #registerDiv{
-    display: flex;
-    background-color: rgb(0, 0, 0);
-    height: 500px;
-    width: 500px;
-    margin: 100px;
-    padding: 25px;
+  display: flex;
+  background-color: rgb(0, 0, 0);
+  height: 500px;
+  width: 500px;
+  margin: 100px;
+  padding: 25px;
 }
 
 .oswald-uniquifier {
-    font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-  }
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
 
-  #loginButton{
-    padding: 5px;
-    border-radius: 5px;
-  }
+#loginButton{
+  padding: 5px;
+  border-radius: 5px;
+}
 
-  #registerButton{
-    padding: 5px;
-    border-radius: 5px;
-  }
+#registerButton{
+  padding: 5px;
+  border-radius: 5px;
+}

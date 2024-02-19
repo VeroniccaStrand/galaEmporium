@@ -1,4 +1,4 @@
-main{
+#mainHome{
     display: flex;
     flex-direction: column;
     margin-left: auto;
@@ -27,6 +27,8 @@ main{
 #calendar {
     display: flex;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
     background-color: white;
     opacity: 0.5;
     font-weight: bold;
