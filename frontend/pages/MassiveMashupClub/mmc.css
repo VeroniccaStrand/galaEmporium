@@ -43,7 +43,7 @@
   align-items: center;
   background-color: rgba(0, 0, 0, 0.391);
   padding: var(--padding-medium);
-  color: #f5f5f5;
+  color: rgb(255, 182, 46);
   font-family: var(--ff-poppins);
 }
 
@@ -54,27 +54,21 @@
 }
 
 .massive-logo {
-  color: rgb(245, 66, 12);
-  font-family: var(--ff-english);
-  font-size: var(--fs-medium);
-}
-
-p {
   color: rgb(255, 182, 46);
+  font-family: var(--ff-english);
   font-size: var(--fs-medium);
 }
 
 .massive-intro {
   position: relative;
-  z-index: 2;
-  color: #f5f5f5;
+  color: rgb(255, 182, 46);
   display: flex;
   justify-content: space-between;
   min-height: 33em;
 }
 
 .pitch__intro-left {
-  position: relative;
+  display: flex;
   font-size: var(--fs-medium);
   margin-top: var(--margin-large);
   margin-left: var(--margin-large);
@@ -204,6 +198,7 @@ p {
 #massive-about-us {
   max-width: 100ch;
   font-family: var(--fs-small);
+  color: rgb(255, 182, 46);
 }
 
 .massive-aboutus {

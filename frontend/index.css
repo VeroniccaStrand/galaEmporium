@@ -39,7 +39,7 @@ a {
   text-decoration: none;
 }
 
-body{
+body {
   display: flex;
   flex-direction: column;
   /*background-image: url(https://i.pinimg.com/originals/53/0f/cd/530fcd702b1d9ad6afc9278540d8db7b.jpg);
@@ -58,8 +58,8 @@ body{
 #navScroll {
   color: white;
   display: flex;
-  overflow: hidden;
-  position: fixed;
+
+  position: sticky;
   top: 0;
   width: 100%;
   background-color: black;
