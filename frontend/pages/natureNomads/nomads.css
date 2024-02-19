@@ -1,0 +1,10 @@
+#nomad-wrap {
+  background-color: white;
+  height: 100%;
+  padding: 2em;
+  font-family: "Poppins", sans-serif;
+}
+.nomad-header {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+}

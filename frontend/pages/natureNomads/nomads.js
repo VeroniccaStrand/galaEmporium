@@ -60,39 +60,40 @@ export default async function nomads(clubId = "65ca94bb9f5eb98aed7ed0f6") {
         `;
       })
       .join("");
-
-    console.log(events);
-    return `
+    
+      console.log(events);
+      return `
       <div id="nomad-wrap">
-        <header class="nomad-header">
-        <nav class="nomad-nav">
-          <div class="nomad-logo">
-            <span class="nomad-logo">N<span class="in__line">.</span>n</span>
-          </div>
-          <div class="nomad-nav__items">
-            <a href="#nomads">Nature Nomads</a>
-            <a href="#">About us</a>
-            <a href="#create">Create Event</a>
-            <a href="#">Contact us</a>
-          </div>
-        </nav>
-        <div class="nomad-hero">
-          <p class="nomad-hero__intro">
-            .Where the path less traveled is our preferred route
-          </p>
-          <p class="nomad-hero__text">
-          Step into the  <a class="nomad-in__line" href="">nature Nomads </a> 
-          Club, where we hang out, 
-            hike, and geek out over all things outdoorsy. 
-            
-          </p>
-        </div>
-      </header>
-        <h2 class='nomad-calender-title'> Upcoming events </h2>
-        <div class="nomad-event-container">
-          ${eventCards}
-        </div>
-      </div>
+    <p class="nomad-hero__intro">
+      .Where the path less traveled is our preferred route
+    </p>
+    <header class="nomad-header">
+  
+
+        <p class="nomad-hero__text">
+          Step into the <a class="nomad-in__line" href="">nature Nomads </a>
+          Club, where we hang out, hike, and geek out over all things outdoorsy.
+          Immerse yourself in a community passionate about exploring the wonders
+          of nature, planning exhilarating hikes, and engaging in insightful
+          conversations about mountain safety.
+        </p>
+    
+    </header>
+
+  <nav class="nomad-nav">
+    <div class="nomad-logo">
+      <span class="nomad-logo">N<span class="in__line">.</span>n</span>
+    </div>
+    <div class="nomad-nav__items">
+      <a href="#nomads">Nature Nomads</a>
+      <a href="#">About us</a>
+      <a href="#create">Create Event</a>
+      <a href="#">Contact us</a>
+    </div>
+  </nav>
+  <h2 class="nomad-calender-title">Upcoming events</h2>
+  <div class="nomad-event-container">${eventCards}</div>
+</div>
     `;
   } catch (error) {
     console.error("Error fetching data:", error);
