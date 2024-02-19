@@ -2,8 +2,10 @@
 @import url("./pages/home/home.css");
 @import url("./pages/natureNomads/nomads.css");
 @import url("./pages/MassiveMashupClub/mmc.css");
+@import url("./pages/whiskeyTasting/whiskey.css");
 /*@import url("pages/dandelionjazzclub.css");*/
 @import url("./pages/createEvent/createForm.css");
+
 /*SIMPLE RESET CSS*/
 *,
 *::before,
@@ -36,11 +38,53 @@ a {
   color: inherit;
   text-decoration: none;
 }
-#navScroll {
+
+body{
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #222;
-  padding: 2em;
-  color: #fff;
+  flex-direction: column;
+  /*background-image: url(https://i.pinimg.com/originals/53/0f/cd/530fcd702b1d9ad6afc9278540d8db7b.jpg);
+  background-position-x: 40%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: auto;*/
+  background-color: rgb(41, 40, 40);
+}
+
+#navScroll {
+  color: white;
+  display: flex;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  height: 70px;
+  min-width: fit-content;
+  font-family: "Oswald", sans-serif;
+}
+
+.userBtn {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.circleBtn {
+  display: flex;
+  margin-top: 10px;
+}
+
+.home {
+  display: flex;
+  margin-top: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: x-large;
 }

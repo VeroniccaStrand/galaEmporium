@@ -1,3 +1,5 @@
+import buyTicket from "../booking/booking.js";
+
 function formatDateTime(dateTimeString) {
   const options = {
     day: "numeric",
@@ -14,14 +16,17 @@ function formatDateTime(dateTimeString) {
   return formattedDate;
 }
 
-export default async function nomads(clubId = '65ca94bb9f5eb98aed7ed0f6') {
+export default async function nomads(clubId = "65ca94bb9f5eb98aed7ed0f6") {
   try {
-    const response = await fetch(`http://localhost:3000/api/events/club/${clubId}`, {
-      method: 'GET', // Ändra metoden till GET eftersom du hämtar data
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    const response = await fetch(
+      `http://localhost:3000/api/events/club/${clubId}`,
+      {
+        method: "GET", // Ändra metoden till GET eftersom du hämtar data
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     const events = await response.json();
 
@@ -45,10 +50,10 @@ export default async function nomads(clubId = '65ca94bb9f5eb98aed7ed0f6') {
                 <h3 class='event-title'>${event.name}</h3>
                 <p class='event-desc'>${event.desc}</p>
               </div>
-              <div class="buy-wrap">
+              <div class="buy-wra$p"> 
                 <span class="price">Price: ${event.price}kr</span>
                 <span class="tickets">Tickets left: ${event.tickets}</span>
-                <button class='buy-btn'>Buy Ticket</button>
+                <button onclick="buyTicket('${event._id}')" class='buy-btn'>Buy Ticket</button>
               </div>
             </div>
           </div>
@@ -94,3 +99,4 @@ export default async function nomads(clubId = '65ca94bb9f5eb98aed7ed0f6') {
     return "Error fetching data from the database";
   }
 }
+window.buyTicket = buyTicket;
