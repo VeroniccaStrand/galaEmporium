@@ -1,0 +1,213 @@
+:root {
+  --fs-small: 1.2rem;
+  --fs-medium: 1.8rem;
+  --fs-large: 2.2rem;
+  --fs-xlarge: 4rem;
+
+  --padding-small: 0.5em;
+  --padding-medium: 2em;
+  --padding-large: 3em;
+
+  --margin-small: 0.5em;
+  --margin-medium: 1em;
+  --margin-large: 2em;
+
+  --ff-english: "IM Fell English SC", serif;
+  --ff-poppins: "Poppins", sans-serif;
+  --ff-roboto-slab: "Roboto Slab", serif;
+  --ff-uncial: "Uncial Antiqua", cursive;
+}
+
+.massive-header {
+  background-image: url("images/Blue.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.429);
+  background-blend-mode: multiply;
+}
+
+.massive-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.391);
+  padding: var(--padding-medium);
+  color: #f5f5f5;
+  font-family: var(--ff-poppins);
+}
+
+.massive-nav_items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.391);
+  padding: var(--padding-medium);
+  color: rgb(255, 182, 46);
+  font-family: var(--ff-poppins);
+}
+
+.massive-nav__items a {
+  color: rgb(245, 66, 12);
+  padding: var(--padding-large);
+  font-family: --;
+}
+
+.massive-logo {
+  color: rgb(255, 182, 46);
+  font-family: var(--ff-english);
+  font-size: var(--fs-medium);
+}
+
+.massive-intro {
+  position: relative;
+  color: rgb(255, 182, 46);
+  display: flex;
+  justify-content: space-between;
+  min-height: 33em;
+}
+
+.pitch__intro-left {
+  display: flex;
+  font-size: var(--fs-medium);
+  margin-top: var(--margin-large);
+  margin-left: var(--margin-large);
+  color: rgb(255, 182, 46);
+  max-width: 25ch;
+  font-family: var(--ff-english);
+  text-shadow: 5px 5px 10px #000000;
+  align-self: flex-start;
+}
+
+.pitch__intro-right {
+  position: relative;
+  font-size: var(--fs-medium);
+  color: rgb(255, 182, 46);
+  font-family: var(--ff-english);
+  text-shadow: 5px 5px 10px #000000;
+  left: 35rem;
+  align-self: flex-start;
+  margin-top: var(--margin-large);
+  max-width: 25ch;
+}
+
+.pitch__text {
+  position: relative;
+  max-width: 40ch;
+  align-self: flex-end;
+  margin-bottom: var(--margin-large);
+  margin-right: var(--margin-large);
+  line-height: 1.35;
+  font-family: var(--ff-english);
+  padding: var(--padding-small);
+  font-size: var(--fs-small);
+}
+
+#massive-wrapper {
+  background-color: rgb(43, 41, 41);
+}
+
+.massive-calender-title {
+  position: relative;
+  font-family: var(--ff-poppins);
+  text-transform: uppercase;
+  margin-left: var(--margin-large);
+  margin-top: var(--margin-large);
+  color: rgb(245, 66, 12);
+}
+
+.massive-calender-title::after {
+  position: absolute;
+  content: "";
+  width: 2em;
+  height: 5px;
+  left: 0;
+  bottom: 0;
+
+  background-color: #906b3c;
+}
+
+.massive-event-container {
+  margin: var(--margin-large);
+  padding: var(--padding-medium);
+  border: solid 2px black;
+  font-family: var(--ff-poppins);
+  background-color: #222;
+}
+
+.massive-event-title {
+  font-family: var(--ff-english);
+  font-size: var(--fs-large);
+  letter-spacing: 1.5px;
+  color: rgb(245, 66, 12);
+}
+
+.massive-event-info {
+  display: grid;
+  grid-template-columns: minmax(0, 8em) 1fr minmax(0, 8em);
+  align-items: center;
+  padding-bottom: var(--padding-medium);
+  column-gap: 2em;
+  margin-top: var(--margin-large);
+  border-bottom: #060606 solid 0.5px;
+}
+
+.massive-event-desc {
+  font-weight: 100;
+  line-height: 1.65;
+  color: rgb(255, 182, 46);
+}
+
+.massive-date-time {
+  padding: var(--padding-small);
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-align: center;
+  color: rgb(245, 66, 12);
+}
+
+.massive-buy-btn {
+  background-image: linear-gradient(
+    to left bottom,
+    #ad3621,
+    #a54821,
+    #9e5626,
+    #97612f,
+    #906b3c
+  );
+  padding: 0.5em 1.2em;
+  cursor: pointer;
+  border-radius: 0.2em;
+  margin-top: 1em;
+  box-shadow: 1px 2px 5px rgb(69, 69, 69);
+  color: black;
+}
+
+.massive-price {
+  color: rgb(245, 66, 12);
+}
+
+.massive-tickets {
+  color: rgb(245, 66, 12);
+}
+
+.massive-buy-btn:hover {
+  color: white;
+}
+
+#massive-about-us {
+  max-width: 100ch;
+  font-family: var(--fs-small);
+  color: rgb(255, 182, 46);
+}
+
+.massive-aboutus {
+  margin-left: 2.4rem;
+  color: rgb(245, 66, 12);
+}
+
+#massive-about-us p {
+  font-size: var(--fs-small);
+  margin-top: 0.5rem;
+  margin-left: var(--margin-large);
+}

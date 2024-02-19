@@ -1,3 +1,5 @@
+import buyTicket from "../booking/booking.js";
+
 function formatDateTime(dateTimeString) {
   const options = {
     day: "numeric",
@@ -14,14 +16,17 @@ function formatDateTime(dateTimeString) {
   return formattedDate;
 }
 
-export default async function nomads(clubId = '65ca94bb9f5eb98aed7ed0f6') {
+export default async function nomads(clubId = "65ca94bb9f5eb98aed7ed0f6") {
   try {
-    const response = await fetch(`http://localhost:3000/api/events/club/${clubId}`, {
-      method: 'GET', // Ändra metoden till GET eftersom du hämtar data
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    const response = await fetch(
+      `http://localhost:3000/api/events/club/${clubId}`,
+      {
+        method: "GET", // Ändra metoden till GET eftersom du hämtar data
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     const events = await response.json();
 
@@ -38,17 +43,17 @@ export default async function nomads(clubId = '65ca94bb9f5eb98aed7ed0f6') {
         const cardClass = index % 2 === 0 ? "even" : "odd";
 
         return `
-          <div class="event-card ${cardClass}">
-            <div class="event-info">
-              <p class='date-time'>${formatDateTime(event.dateTime)}</p>
-              <div class='event-text-wrap'>
-                <h3 class='event-title'>${event.name}</h3>
-                <p class='event-desc'>${event.desc}</p>
+          <div class="nomad-event-card ${cardClass}">
+            <div class="nomad-event-info">
+              <p class='nomad-date-time'>${formatDateTime(event.dateTime)}</p>
+              <div class='nomad-event-text-wrap'>
+                <h3 class='nomad-event-title'>${event.name}</h3>
+                <p class='nomad-event-desc'>${event.desc}</p>
               </div>
-              <div class="buy-wrap">
-                <span class="price">Price: ${event.price}kr</span>
-                <span class="tickets">Tickets left: ${event.tickets}</span>
-                <button class='buy-btn'>Buy Ticket</button>
+              <div class="nomad-buy-wrap"> 
+                <span class="nomad-price">Price: ${event.price}kr</span>
+                <span class="nomad-tickets">Tickets left: ${event.tickets}</span>
+                <button onclick="buyTicket('${event._id}')" class='nomad-buy-btn'>Buy Ticket</button>
               </div>
             </div>
           </div>
@@ -58,33 +63,33 @@ export default async function nomads(clubId = '65ca94bb9f5eb98aed7ed0f6') {
 
     console.log(events);
     return `
-      <div id="wrap">
-        <header class="header">
-        <nav class="nav">
-          <div class="logo">
-            <span class="logo">N<span class="in__line">.</span>n</span>
+      <div id="nomad-wrap">
+        <header class="nomad-header">
+        <nav class="nomad-nav">
+          <div class="nomad-logo">
+            <span class="nomad-logo">N<span class="in__line">.</span>n</span>
           </div>
-          <div class="nav__items">
+          <div class="nomad-nav__items">
             <a href="#nomads">Nature Nomads</a>
             <a href="#">About us</a>
             <a href="#create">Create Event</a>
             <a href="#">Contact us</a>
           </div>
         </nav>
-        <div class="hero">
-          <p class="hero__intro">
+        <div class="nomad-hero">
+          <p class="nomad-hero__intro">
             .Where the path less traveled is our preferred route
           </p>
-          <p class="hero__text">
-          Step into the  <a class="in__line" href="">nature Nomads </a> 
+          <p class="nomad-hero__text">
+          Step into the  <a class="nomad-in__line" href="">nature Nomads </a> 
           Club, where we hang out, 
             hike, and geek out over all things outdoorsy. 
             
           </p>
         </div>
       </header>
-        <h2 class='calender-title'> Upcoming events </h2>
-        <div class="event-container">
+        <h2 class='nomad-calender-title'> Upcoming events </h2>
+        <div class="nomad-event-container">
           ${eventCards}
         </div>
       </div>
@@ -94,3 +99,4 @@ export default async function nomads(clubId = '65ca94bb9f5eb98aed7ed0f6') {
     return "Error fetching data from the database";
   }
 }
+window.buyTicket = buyTicket;

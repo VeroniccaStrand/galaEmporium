@@ -1,0 +1,80 @@
+#mainHome {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  font-size: larger;
+}
+
+#title {
+  color: white;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+#circles {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#calendar {
+  margin: var(--margin-large);
+  padding: var(--padding-medium);
+  border: solid 2px black;
+  background-color: #222;
+  font-family: "Oswald", sans-serif;
+}
+
+.event-card {
+  margin: var(--margin-large);
+  padding: var(--padding-medium);
+  border: solid 2px rgb(255, 255, 255);
+
+  background-color: #222;
+}
+
+.allEvents-event-title {
+
+  font-size: var(--fs-large);
+  letter-spacing: 1.5px;
+  color: rgb(255, 255, 255);
+}
+
+.allEvents-event-info {
+  display: grid;
+  grid-template-columns: minmax(0, 8em) 1fr minmax(0, 8em);
+  align-items: center;
+  padding-bottom: var(--padding-medium);
+  column-gap: 2em;
+  margin-top: var(--margin-large);
+  border-bottom: #ffffff solid 0.5px;
+}
+
+.allEvents-event-desc {
+  font-weight: 100;
+  line-height: 1.65;
+  color: #ffffff;
+}
+
+.allEvents-date-time {
+  padding: var(--padding-small);
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.allEvents-price {
+  color: rgb(255, 255, 255);
+}
+
+.allEvents-tickets {
+  color: rgb(255, 255, 255);
+}

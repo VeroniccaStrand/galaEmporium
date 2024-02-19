@@ -1,27 +1,27 @@
 export default function loginForm() {
   return `
-  <div> 
-    <form id="loginForm" onsubmit="login(); return false">
-      <h1>Login</h1>
-      <input type="text" name="email" placeholder="Enter your Email">
-      <input type="password" id="password" minlength="3" placeholder="Enter password">
-      <input type="submit" id="loginButton" value="Login"/>
-    </form>
-  </div>
+  <div id="loginRegWrap"> 
+    <div id=loginDiv> 
+      <form id="loginForm" onsubmit="login(); return false">
+        <h1>Login</h1>
+        <input type="text" name="email" placeholder="Enter your email">
+        <input type="password" id="password" minlength="3" placeholder="Enter password">
+        <input type="submit" id="loginButton" value="Login"/>
+      </form>
+    </div>
 
     <div id=registerDiv> 
+      <form id="registerForm" onsubmit="register(); return false">
+        <h1>Register an account</h1>
+        <input type="text" name="userName" placeholder="Enter your username">
+        <input type="text" name="email" placeholder="Enter your email">
+        <label for="adminCheck">Are you a Club Admin? </label>
+        <input type="text" name="role" placeholder="Enter your role">
+        <input type="submit" id="registerButton" value="Click to register"/>
+      </form>
 
-  <form id="registerForm" onsubmit="register(); return false">
-    <h1>Register an account</h1>
-    <input type="text" name="userName" placeholder="Enter your username">
-    <input type="text" name="email" placeholder="Enter your email">
-    <input type="password" id="password" minlength="3" placeholder="Enter a password">
-    <label for="adminCheck">Admin? </label>
-    <input type="text" name="role" placeholder="admin?">
-    <input type="submit" id="registerButton" value="Click to register"/>
-  </form>
-
-</div>
+    </div>
+  </div>
   `;
 }
 
@@ -46,7 +46,7 @@ async function login() {
     if (result.status == 200) {
       location.href = "";
     }
-  } catch (error) {}
+  } catch (error) { }
 }
 
 
