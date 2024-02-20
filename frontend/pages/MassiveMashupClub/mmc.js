@@ -54,7 +54,8 @@ export default async function massiveMashup(
                 <span class="massive-price">Price: ${event.price}kr</span>
                 <span class="massive-tickets">Tickets left: ${event.tickets
                 }</span>
-                <button class='massive-buy-btn'>Buy Ticket</button>
+                <button onclick="buyTicket('${event._id}')" class='massive-buy-btn'>Book Ticket</button>
+
               </div>
             </div>
           </div>

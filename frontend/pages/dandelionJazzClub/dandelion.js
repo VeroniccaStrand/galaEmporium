@@ -55,6 +55,7 @@ export default async function dandelion(clubId = '65cc8a73e536d3509bd17b59') {
                         Tickets left: ${event.tickets}
                         <br/>
                         <a href="#köpatickets"> <img id="dandelionTicketBtn" src="pages/dandelionJazzClub/images/ticket.png" height="50px" width="139px"></a>
+                        /*<button onclick="buyTicket('${event._id}')" class='nomad-buy-btn'>Book Ticket</button>*/
                     </span>
 
               </div>

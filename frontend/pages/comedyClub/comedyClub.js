@@ -51,6 +51,8 @@ function formatDateTime(dateTimeString) {
                 <span class="price">Price: ${event.price}kr</span>
                 <span class="tickets">Tickets left: ${event.tickets}</span>
                 <button class='buy-btn'>Buy Ticket</button>
+<!--                 <button onclick="buyTicket('${event._id}')" class='nomad-buy-btn'>Book Ticket</button>
+      -->
               </div>
             </div>
           </div>

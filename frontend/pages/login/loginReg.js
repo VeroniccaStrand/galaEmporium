@@ -7,6 +7,8 @@ export default function loginForm() {
         <input type="text" name="email" placeholder="Enter your email">
         <input type="password" id="password" minlength="3" placeholder="Enter password">
         <input type="submit" id="loginButton" value="Login"/>
+        <br/>
+        <a href="#myPage" id="myPageButton">Already logged in? Click here!</a>
       </form>
     </div>
 
@@ -19,12 +21,12 @@ export default function loginForm() {
         <input type="text" name="role" placeholder="Enter your role">
         <input type="submit" id="registerButton" value="Click to register"/>
       </form>
-
     </div>
   </div>
+
+
   `;
 }
-
 
 async function login() {
   console.log("Logged in");
@@ -46,9 +48,8 @@ async function login() {
     if (result.status == 200) {
       location.href = "";
     }
-  } catch (error) { }
+  } catch (error) {}
 }
-
 
 async function register() {
   console.log("Registered");
@@ -56,8 +57,8 @@ async function register() {
   const data = {
     userName: $('#registerForm [name="userName"]').val(),
     email: $('#registerForm [name="email"]').val(),
-    password: $('#registerForm [id="password"]').val()
-  }
+    password: $('#registerForm [id="password"]').val(),
+  };
   console.log(data);
   try {
     const result = await fetch("api/users", {
@@ -71,9 +72,8 @@ async function register() {
     if (result.status == 200) {
       location.href = "";
     }
-  } catch (error) { }
+  } catch (error) {}
 }
 
 window.login = login;
 window.register = register;
-
