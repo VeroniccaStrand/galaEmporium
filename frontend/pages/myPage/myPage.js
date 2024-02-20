@@ -43,9 +43,16 @@ export default async function myPage() {
       })
       .join("");
     return `
+    <div class='myPage-container'>
+    <div class='myPage'>
+    <h3>Awesome events coming your way</h3>
+    <p>Your tickets:</p>
         <div class="ticket-wrap">${userTickets} </div>
-
-        <button onclick="logOut()">Logga ut</button>
+        <button class='logOut-btn' onclick="logOut()">Log Out</button>
+    </div>
+    
+    </div>
+        
 
        `;
   } catch (error) {
