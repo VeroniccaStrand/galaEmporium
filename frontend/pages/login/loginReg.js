@@ -8,7 +8,7 @@ export default function loginForm() {
         <input type="password" id="password" minlength="3" placeholder="Enter password">
         <input type="submit" id="loginButton" value="Login"/>
         <br/>
-        <a href="#myPage" id="myPageButton">Already logged in? Click here!</a>
+        <a href="#myPage" id="myPageButton">Ya feelin' lucky? Well, do ya, punk?</a>
       </form>
     </div>
 

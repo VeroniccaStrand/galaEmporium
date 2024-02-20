@@ -58,5 +58,5 @@ export const ticketInfo = async (req, res) => {
       });
   
     console.log(userTickets)
-  res.status(200).json();
+  res.status(200).json(userTickets);
 };

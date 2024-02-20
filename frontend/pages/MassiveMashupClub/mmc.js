@@ -1,3 +1,5 @@
+import buyTicket from "../booking/booking.js";
+
 function formatDateTime(dateTimeString) {
   const options = {
     day: "numeric",
@@ -52,10 +54,8 @@ export default async function massiveMashup(
               </div>
               <div class="buy-wrap">
                 <span class="massive-price">Price: ${event.price}kr</span>
-                <span class="massive-tickets">Tickets left: ${event.tickets
-                }</span>
+                <span class="massive-tickets">Tickets left: ${event.tickets}</span>
                 <button onclick="buyTicket('${event._id}')" class='massive-buy-btn'>Book Ticket</button>
-
               </div>
             </div>
           </div>
@@ -110,3 +110,4 @@ export default async function massiveMashup(
     return "Error fetching data from the database";
   }
 }
+window.buyTicket = buyTicket;

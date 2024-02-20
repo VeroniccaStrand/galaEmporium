@@ -1,42 +1,47 @@
+import buyTicket from "../booking/booking.js";
+
 function formatDateTime(dateTimeString) {
-    const options = {
-        day: "numeric",
-        month: "short",
-        hour: "numeric",
-        minute: "numeric",
-        hour12: false,
-        timeZone: "UTC",
-    };
-    const formattedDate = new Date(dateTimeString).toLocaleDateString(
-        "sv-SE",
-        options
-    );
-    return formattedDate;
+  const options = {
+    day: "numeric",
+    month: "short",
+    hour: "numeric",
+    minute: "numeric",
+    hour12: false,
+    timeZone: "UTC",
+  };
+  const formattedDate = new Date(dateTimeString).toLocaleDateString(
+    "sv-SE",
+    options
+  );
+  return formattedDate;
 }
 
-export default async function dandelion(clubId = '65cc8a73e536d3509bd17b59') {
-    try {
-        const response = await fetch(`http://localhost:3000/api/events/club/${clubId}`, {
-            method: 'GET', 
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
+export default async function dandelion(clubId = "65cc8a73e536d3509bd17b59") {
+  try {
+    const response = await fetch(
+      `http://localhost:3000/api/events/club/${clubId}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
-        const events = await response.json();
+    const events = await response.json();
 
-        if (!response.ok) {
-            console.error("Error fetching events:", response.statusText);
-            return "Error fetching data from the database";
-        }
+    if (!response.ok) {
+      console.error("Error fetching events:", response.statusText);
+      return "Error fetching data from the database";
+    }
 
-        events.sort((a, b) => new Date(b.dateTime) - new Date(a.dateTime));
+    events.sort((a, b) => new Date(b.dateTime) - new Date(a.dateTime));
 
-        const eventCards = events
-            .map((event, index) => {
-                const cardClass = index % 2 === 0 ? "even" : "odd";
+    const eventCards = events
+      .map((event, index) => {
+        const cardClass = index % 2 === 0 ? "even" : "odd";
 
-                return `
+        return `
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
@@ -54,17 +59,16 @@ export default async function dandelion(clubId = '65cc8a73e536d3509bd17b59') {
                         <br/>
                         Tickets left: ${event.tickets}
                         <br/>
-                        <a href="#köpatickets"> <img id="dandelionTicketBtn" src="pages/dandelionJazzClub/images/ticket.png" height="50px" width="139px"></a>
-                        /*<button onclick="buyTicket('${event._id}')" class='nomad-buy-btn'>Book Ticket</button>*/
+                        <img onclick="buyTicket('${event._id}')" id="dandelionTicketBtn" src="pages/dandelionJazzClub/images/ticket.png" height="50px" width="139px"><
                     </span>
 
               </div>
             </div>
           `;
-            })
-            .join("");
+      })
+      .join("");
 
-        return `        
+    return `        
         <div id="dandelionWrapper">
 
             <div id="dandelionHeader">
@@ -117,8 +121,9 @@ export default async function dandelion(clubId = '65cc8a73e536d3509bd17b59') {
 
         </div>
       `;
-    } catch (error) {
-        console.error("Error fetching data:", error);
-        return "Error fetching data from the database";
-    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return "Error fetching data from the database";
+  }
 }
+window.buyTicket = buyTicket;

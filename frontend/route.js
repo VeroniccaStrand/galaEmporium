@@ -7,6 +7,7 @@ import loginForm from "./pages/login/loginReg.js";
 import createEvent from "./pages/createEvent/createEvent.js";
 import dandelion from "./pages/dandelionJazzClub/dandelion.js";
 import createEventForm from "./pages/createEvent/createEvent.js";
+import myPage from "./pages/myPage/myPage.js";
 
 async function route() {
   console.log(location);
@@ -39,6 +40,10 @@ async function route() {
     case "create":
       console.log("createEvent");
       $("main").html(await createEvent());
+      break;
+    case "myPage":
+      console.log("myPage");
+      $("main").html(await myPage());
       break;
 
     default:
