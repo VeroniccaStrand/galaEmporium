@@ -8,15 +8,15 @@ export default async function buyTicket(eventId) {
     const result = await fetch("api/Tickets", {
       method: "post",
       headers: {
-        "Content-Type": "applications/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
+      
     });
+    console.log(data)
     alert("Purchase successful");
 
-    if (result.status == 200) {
-      location.href = "";
-    }
+    location.reload()
   } catch (error) {
     console.error("Error fetching data:", error);
     return "Error fetching data from the database";
