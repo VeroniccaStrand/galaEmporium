@@ -21,6 +21,7 @@ export default function loginForm() {
         <h1>Register an account</h1>
         <input type="text" name="userName" placeholder="Enter your username">
         <input type="text" name="email" placeholder="Enter your email">
+        <input type="password" name="choosePassword" placeholder="Choose Password">
         <label for="adminCheck">Are you a Club Admin? </label>
         <input type="text" name="role" placeholder="Enter your role">
         <input type="submit" id="registerButton" value="Click to register"/>
@@ -50,24 +51,30 @@ async function login() {
       body: JSON.stringify(data),
     });
     console.log("result", result);
+    const responseData = await result.json();
     // Vid lyckad inloggning, omdirigera användaren till startsidan
     if (result.status == 200) {
+      $('#loginForm [name="email"]').val('');
+      $('#loginForm [id="password"]').val('');
+
+      const userName = responseData.user.userName; 
+      alert(`Welcome, ${userName}!`)
       location.href = "";
+   
     }
   } catch (error) {}
 }
 
 // Funktion för att registrera ny användare
+// Funktion för att registrera ny användare
 async function register() {
-  console.log("Registered");
-
   // Hämta indata från registreringsformuläret
   const data = {
     userName: $('#registerForm [name="userName"]').val(),
     email: $('#registerForm [name="email"]').val(),
-    password: $('#registerForm [id="password"]').val(),
+    password: $('#registerForm [name="choosePassword"]').val(),
   };
-  console.log(data);
+
   try {
     // Skicka registreringsuppgifter till servern
     const result = await fetch("api/users", {
@@ -77,13 +84,37 @@ async function register() {
       },
       body: JSON.stringify(data),
     });
-
-    // Vid lyckad registrering, omdirigera användaren till startsidan
-    if (result.status == 200) {
-      location.href = "";
-    }
-  } catch (error) {}
+    console.log(data);
+    // Försök tolka svaret som JSON
+    const responseJson = await result.json();
+// Kontrollera om registreringen lyckades (status 200)
+if (result.status === 200) {
+  const userName = responseJson.user.userName; 
+  alert(`You are now registered and can book tickets to our events. Welcome, ${userName}!`);
+  location.href = "";
+  console.log("Registered");
+} else {
+  // Visa meddelandet från servern
+  alert(responseJson.message);
+  console.error('Error during registration:', result.statusText);
 }
+
+
+
+if (result.status !== 200 && result.status !== 400 && result.status !== 401) {
+  // Annars, hantera övriga fel här
+  console.error('Error during registration:', result.statusText);
+}
+
+
+  } catch (error) {
+    console.error('Error during registration:', error);
+  }
+}
+
+
+
+
 
 // Gör login- och register-funktionerna tillgängliga globalt i webbläsaren
 window.login = login;

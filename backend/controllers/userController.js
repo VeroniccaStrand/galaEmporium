@@ -2,21 +2,33 @@ import User from "../models/userModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-// create
+// Create user
 export const createUser = async (req, res) => {
   try {
     const { userName, email, password, role, clubId, tickets } = req.body;
+    
+    // Check if user already exists with the same email
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res
         .status(400)
         .json({ message: "User with this email already exists." });
     }
-    if (!userName) {
-      res.status(400).json({ message: "Please add Username." });
-    }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+    // Check if username is provided
+if (!userName || !email || !password) {
+  return res.status(401).json({ message: "Please provide all required fields." });
+}
+
+
+    // Generate salt
+    const saltRounds = 10;
+    const salt = await bcrypt.genSalt(saltRounds);
+
+    // Hash the password with the generated salt
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // Create the user
     const user = await User.create({
       userName,
       email,
@@ -26,67 +38,69 @@ export const createUser = async (req, res) => {
       tickets,
     });
 
-    if (user) {
-      res.status(201).json(user);
-    } else {
-      res.status(500).json({ message: "Failed to create User" });
-    }
+    // Send a successful response with the user object
+    res.status(201).json(user);
   } catch (error) {
-    console.error("Error adding User", error);
+    console.error("Error creating user", error);
     res.status(500).json({ error: "Internal server error." });
   }
 };
 
-// get all users GET
+// Get all users (GET)
 export const getUsers = async (req, res) => {
   try {
     const users = await User.find();
-
     res.status(200).json(users);
   } catch (error) {
-    console.error("Error adding User", error);
+    console.error("Error fetching users", error);
     res.status(500).json({ error: "Internal server error." });
   }
 };
 
-//Get one user GET :id
+// Get one user (GET :id)
 export const getOneUser = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
     if (!user) {
-      res.status(404).json({ message: "User not found." });
+      return res.status(404).json({ message: "User not found." });
     }
     res.status(200).json(user);
   } catch (error) {
-    console.error("Error finding user", error);
+    console.error("Error searching for user", error);
     res.status(500).json({ error: "Internal server error." });
   }
 };
 
-//delete user DELETE
+// Delete user (DELETE)
 export const deleteUser = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
     if (!user) {
-      res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "User not found." });
     }
+
+    // Delete the user
     await user.deleteOne();
-    return res.staus(200).json({ message: "deleted:", id: req.params.id });
+    return res.status(200).json({ message: "Deleted:", id: req.params.id });
   } catch (error) {
     console.error("Error deleting user", error);
     res.status(500).json({ error: "Internal server error." });
   }
 };
 
+// Update user (PUT)
 export const updateUser = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
     if (!user) {
-      res.status(404).json({ message: "User not found." });
+      return res.status(404).json({ message: "User not found." });
     }
+
+    // Update the user
     const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
+
     return res.status(200).json(updatedUser);
   } catch (error) {
     console.error("Error updating user", error);
@@ -94,31 +108,37 @@ export const updateUser = async (req, res) => {
   }
 };
 
+// Log in user
 export const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
-    // hitta användaren
+    
+    // Find the user
     const user = await User.findOne({ email });
-    //om inte user finns eller inte lösenord matchar
+    
+    // If the user doesn't exist or the password doesn't match
     if (!user || !(await bcrypt.compare(password, user.password))) {
-      return res.status(401).json({ message: "invalid email or password" });
+      return res.status(401).json({ message: "Invalid email or password." });
     }
 
+    // Generate and send JWT token
     const token = generateToken(user);
     res.cookie("token", token, { httpOnly: true });
 
+    // Create a message based on user role
     let message;
     switch (user.role) {
-      case "Vistor":
-        message = "Logged in as a Visitor";
+      case "Visitor":
+        message = "Logged in as Visitor";
         break;
       case "Club Admin":
-        message = "Logged in as a Club Admin";
+        message = "Logged in as Club Administrator";
         break;
       case "Super Admin":
-        message = "Logged in as a Super Admin";
+        message = "Logged in as Super Administrator";
         break;
     }
+
     res.status(200).json({ message, user, token });
   } catch (error) {
     console.error("Error during login:", error);
@@ -126,7 +146,7 @@ export const loginUser = async (req, res) => {
   }
 };
 
-//Generera token
+// Generate JWT token
 export const generateToken = (user) => {
   const payload = {
     id: user._id,
@@ -135,7 +155,7 @@ export const generateToken = (user) => {
   };
 
   if (user.role === "Club Admin" && user.clubId) {
-    // Konvertera ObjectId till sträng
+    // Convert ObjectId to string
     payload.clubId = user.clubId.toString();
   }
 
