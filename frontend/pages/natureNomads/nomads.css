@@ -42,7 +42,7 @@
 }
 .nomad-event-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30em, 0.8fr));
+  grid-template-columns: repeat(auto-fit, minmax(35em, 0.8fr));
 }
 .nomad-event-info {
   padding: 2em;
