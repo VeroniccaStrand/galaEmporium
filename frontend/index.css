@@ -3,9 +3,11 @@
 @import url("./pages/natureNomads/nomads.css");
 @import url("./pages/MassiveMashupClub/mmc.css");
 @import url("./pages/whiskeyTasting/whiskey.css");
+@import url("./pages/dandelionJazzClub/dandelion.css");
 @import url("./pages/comedyClub/comedyClub.css");
 @import url("./pages/createEvent/createForm.css");
 @import url("./pages/login/loginReg.css");
+@import url("./pages/myPage/myPage.css");
 
 /*SIMPLE RESET CSS*/
 *,
@@ -43,7 +45,7 @@ a {
 body {
   display: flex;
   flex-direction: column;
-  /*background-image: url(https://i.pinimg.com/originals/53/0f/cd/530fcd702b1d9ad6afc9278540d8db7b.jpg);
+  background-image: url("images/bg.png");
   background-position-x: 40%;
   background-attachment: fixed;
   background-position: center;
@@ -52,8 +54,9 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
-  z-index: auto;*/
-  background-color: rgb(41, 40, 40);
+  z-index: auto;
+  background-color: rgba(0, 0, 0, 0.553);
+  background-blend-mode: multiply;
 }
 
 #navScroll {

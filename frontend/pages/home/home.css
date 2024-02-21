@@ -1,38 +1,84 @@
-#mainHome{
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
-    color: white;
-    font-family: "Oswald", sans-serif;
-    font-size: larger;
+#mainHome {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  font-size: larger;
 }
 
-#title{
-    color: white;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
+#title {
+  color: white;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  font-size: 90px;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
-#circles{
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
+#circles {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }
-
 
 #calendar {
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: white;
-    opacity: 0.5;
-    font-weight: bold;
-    width: 1000px;
-    height: 700px;
-    margin-top: 150px;
+  margin: var(--margin-large);
+  padding: var(--padding-medium);
+  border: solid 2px rgb(255, 255, 255);
+  background-color: #222;
+  font-family: "Oswald", sans-serif;
+  opacity: 0.9;
+
+}
+
+.event-card {
+  margin: var(--margin-large);
+  padding: var(--padding-medium);
+  border: solid 2px rgb(255, 255, 255);
+
+  background-color: #222;
+}
+
+.allEvents-event-title {
+
+  font-size: var(--fs-large);
+  letter-spacing: 1.5px;
+  color: rgb(255, 255, 255);
+}
+
+.allEvents-event-info {
+  display: grid;
+  grid-template-columns: minmax(0, 8em) 1fr minmax(0, 8em);
+  align-items: center;
+  padding-bottom: var(--padding-medium);
+  column-gap: 2em;
+  margin-top: var(--margin-large);
+  border-bottom: #ffffff solid 0.5px;
+}
+
+.allEvents-event-desc {
+  font-weight: 100;
+  line-height: 1.65;
+  color: #ffffff;
+}
+
+.allEvents-date-time {
+  padding: var(--padding-small);
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.allEvents-price {
+  color: rgb(255, 255, 255);
+}
+
+.allEvents-tickets {
+  color: rgb(255, 255, 255);
 }

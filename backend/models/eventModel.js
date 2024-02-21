@@ -7,6 +7,7 @@ const eventSchema = mongoose.Schema(
     },
     clubId: {
       type: mongoose.Schema.Types.ObjectId,
+      ref: "Club",
     },
     dateTime: {
       type: Date,

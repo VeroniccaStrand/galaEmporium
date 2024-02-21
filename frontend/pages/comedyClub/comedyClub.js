@@ -1,44 +1,47 @@
+import buyTicket from "../booking/booking.js";
+
 function formatDateTime(dateTimeString) {
-    const options = {
-      day: "numeric",
-      month: "short",
-      hour: "numeric",
-      minute: "numeric",
-      hour12: false,
-      timeZone: "UTC",
-    };
-    const formattedDate = new Date(dateTimeString).toLocaleDateString(
-      "sv-SE",
-      options
-    );
-    return formattedDate;
-  }
-  
-  export default async function comedyClub(clubId = '65cf58a9b0b90da0c98c308e') {
-    try {
-      const response = await fetch(
-        `http://localhost:3000/api/events/club/${clubId}`,
-        {
-          method: "GET", // Ändra metoden till GET eftersom du hämtar data
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-  
-      const events = await response.json();
-  
-      if (!response.ok) {
-        console.error("Error fetching events:", response.statusText);
-        // Hantera felet efter behov
-        return "Error fetching data from the database";
+  const options = {
+    day: "numeric",
+    month: "short",
+    hour: "numeric",
+    minute: "numeric",
+    hour12: false,
+    timeZone: "UTC",
+  };
+  const formattedDate = new Date(dateTimeString).toLocaleDateString(
+    "sv-SE",
+    options
+  );
+  return formattedDate;
+}
+
+export default async function comedyClub(clubId = "65cf58a9b0b90da0c98c308e") {
+  try {
+    const response = await fetch(
+      `http://localhost:3000/api/events/club/${clubId}`,
+      {
+        method: "GET", // Ändra metoden till GET eftersom du hämtar data
+        headers: {
+          "Content-Type": "application/json",
+        },
       }
-  
-      events.sort((a, b) => new Date(b.dateTime) - new Date(a.dateTime));
-  
-      const eventCards = events.map((event, index) => {
-          const cardClass = index % 2 === 0 ? "even" : "odd";
-  
+    );
+
+    const events = await response.json();
+
+    if (!response.ok) {
+      console.error("Error fetching events:", response.statusText);
+      // Hantera felet efter behov
+      return "Error fetching data from the database";
+    }
+
+    events.sort((a, b) => new Date(b.dateTime) - new Date(a.dateTime));
+
+    const eventCards = events
+      .map((event, index) => {
+        const cardClass = index % 2 === 0 ? "even" : "odd";
+
         return `
           <div class="event-card ${cardClass}">
             <div class="event-info">
@@ -48,9 +51,12 @@ function formatDateTime(dateTimeString) {
                 <p class='event-desc'>${event.desc}</p>
               </div>
               <div class="buy-wrap">
-                <span class="comdedy_price">Price: ${event.price}kr</span>
-                <span class="comedy_tickets">Tickets left: ${event.tickets}</span>
-                <button class='comedy_buy-btn'>Buy Ticket</button>
+                <span class="price">Price: ${event.price}kr</span>
+                <span class="tickets">Tickets left: ${event.tickets}</span>
+                <button class='buy-btn'>Buy Ticket</button>
+                <button onclick="buyTicket('${event._id
+                }')" class='comedy-buy-btn'>Book Ticket</button>
+      
               </div>
             </div>
           </div>
@@ -60,7 +66,7 @@ function formatDateTime(dateTimeString) {
 
     console.log(events);
     return ` 
-      <div id="comedy_wrap">
+      <div class="comedy_wrap">
         <header class="comedy_header">
         <nav class="comedy_nav">
           <div class="comedy_nav__items">
@@ -91,8 +97,9 @@ function formatDateTime(dateTimeString) {
         </div>
       </div>
     `;
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      return "Error fetching data from the database";
-    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return "Error fetching data from the database";
   }
+}
+window.buyTicket = buyTicket;

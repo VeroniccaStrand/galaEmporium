@@ -1,0 +1,176 @@
+.shadows-into light-regular {
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto-mono-uniquifier {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+
+
+#dandelionWrapper {
+    background-color: rgb(0, 0, 0);
+}
+
+#clubLogo {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#dandelionHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 250px;
+    min-width: fit-content;
+    border-radius: 0px 0px 20px 20px;
+    border-bottom: 3px solid #f0ff22;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+}
+
+#dandelionNav {
+    flex-direction: row;
+    display: flex;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 50px;
+}
+
+#dandelionCreate {
+    flex-direction: row;
+    display: flex;
+    margin-left: auto;
+    margin-top: -55px;
+     width: 200px;
+    height: 50px;
+}
+
+#photoCollection {
+    flex-direction: row;
+    display: flex;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1400px;
+}
+
+#dandelionAboutHead {
+    display: flex;
+    border-bottom: 3px solid #f0ff22;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    padding-top: 125px;
+    margin-top: -125px;
+}
+
+#dandelionAbout {
+    color: #f0ff22;
+    grid-area: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 300px;
+    margin-right: 300px;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1rem;
+}
+
+#dandelionCalendarHead {
+    border-bottom: 3px solid #f0ff22;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    padding-top: 125px;
+    margin-top: -125px;
+}
+
+#dandelionCalendar {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dandelionEventInfo {
+    display: grid;
+    grid-template-columns: 250px 1fr 250px;
+    grid-template-areas:
+        "left center right";
+    margin-top: 25px;
+    height: 150px;
+    border-bottom: 1px solid #f0ff22;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+}
+
+#dandelionEventTitle {
+    font-family: "Shadows Into Light", cursive;
+    grid-area: center;
+    color: #f0ff22;
+    font-size: 50px;
+    margin-top: 10px;
+}
+
+.dandelionEventDesc {
+    color: #f0ff22;
+    grid-area: center;
+    margin-top: 100px;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1rem;
+}
+
+.ticketInfo {
+    grid-area: right;
+    color: #f0ff22;
+    width: 300px;
+    margin: auto;
+    font-size: 1rem;
+    font-family: "Roboto Mono", monospace;
+}
+
+.dateTime {
+    grid-area: left;
+    text-align: left;
+    color: #f0ff22;
+    font-size: 30px;
+    margin: auto;
+    margin-top: 20px;
+    width: 50%;
+    font-family: "Roboto Mono", monospace;
+}
+
+#dandelionTicketBtn {
+    margin-left: -8px;
+}
+
+#dandelionTicketBtn:hover {
+    margin-left: -8px;
+    transform: scale(1.2);
+}
+
+.dandelionPic:hover {
+    transform: scale(1.2);
+}
+
+#dandelionContactHead {
+    border-bottom: 3px solid #f0ff22;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+}
+
+#dandelionContact {
+    margin-top: 50px;
+    padding-bottom: 50px;
+    margin-left: 300px;
+}
