@@ -59,7 +59,7 @@ export default async function dandelion(clubId = "65cc8a73e536d3509bd17b59") {
                         <br/>
                         Tickets left: ${event.tickets}
                         <br/>
-                        <img onclick="buyTicket('${event._id}')" id="dandelionTicketBtn" src="pages/dandelionJazzClub/images/ticket.png" height="50px" width="139px"><
+                        <img onclick="buyTicket('${event._id}')" id="dandelionTicketBtn" src="pages/dandelionJazzClub/images/ticket.png" height="50px" width="139px">
                     </span>
 
               </div>

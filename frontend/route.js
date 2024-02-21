@@ -45,6 +45,10 @@ async function route() {
       console.log("myPage");
       $("main").html(await myPage());
       break;
+    case "dandelion":
+      console.log("dandelion");
+      $("main").html(await dandelion());
+      break;
 
     default:
       console.log("404");
