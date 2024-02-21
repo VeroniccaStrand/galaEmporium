@@ -65,10 +65,18 @@ async function submitCreateEventForm() {
     console.log("result", result);
 
     if (result.status === 201) {
+      alert("Event created successfully");
+
       
+      $('#eventName').val('');
+      $('#dateTime').val('');
+      $('#eventDescription').val('');
+      $('#ticketCount').val('');
+      $('#eventPrice').val('');
+      $('#eventImage').val('');
       console.log("Event created successfully");
     } else {
-   
+      
       console.error("Failed to create Event");
     }
   } catch (error) {

@@ -5,6 +5,9 @@ import whiskey from "./pages/whiskeyTasting/whiskeyTasting.js";
 import comedyClub from "./pages/comedyClub/comedyClub.js";
 import loginForm from "./pages/login/loginReg.js";
 import createEvent from "./pages/createEvent/createEvent.js";
+import dandelion from "./pages/dandelionJazzClub/dandelion.js";
+import createEventForm from "./pages/createEvent/createEvent.js";
+import myPage from "./pages/myPage/myPage.js";
 
 async function route() {
   console.log(location);
@@ -16,29 +19,31 @@ async function route() {
       break;
     case "":
       console.log("home");
-      $("main").html(home());
+      $("main").html(await home());
       break;
     case "nomads":
       console.log("nomads");
       $("main").html(await nomads());
       break;
-       case "massiveMashup":
+    case "massiveMashup":
       console.log("massiveMashup");
-      $("main").html(await massiveMashup());  
+      $("main").html(await massiveMashup());
       break;
     case "whiskey":
       console.log("whiskey");
       $("main").html(await whiskey());
       break;
-    case "create":
-      break;
     case "comedyClub":
-        console.log("comedyClub");
-        $("main").html(await comedyClub());
-        break;
+      console.log("comedyClub");
+      $("main").html(await comedyClub());
+      break;
     case "create":
       console.log("createEvent");
-      $("main").html(createEvent());
+      $("main").html(await createEvent());
+      break;
+    case "myPage":
+      console.log("myPage");
+      $("main").html(await myPage());
       break;
 
     default:

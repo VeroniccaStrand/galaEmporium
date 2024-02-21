@@ -1,0 +1,89 @@
+#nomad-wrap {
+  background-color: white;
+  height: 100%;
+  padding: 2em;
+  font-family: "Poppins", sans-serif;
+}
+.nomad-header {
+  height: max(30em);
+
+  background-image: url(images/krisjanis-mezulis-__E07WwlywA-unsplash.jpg);
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.nomad-hero__text {
+  max-width: 45ch;
+  margin-left: auto;
+  margin-right: 4em;
+  margin-top: -4.2em;
+  line-height: 1.65;
+}
+.nomad-hero__intro {
+  font-family: "IM Fell English SC", serif;
+  font-size: 3.2em;
+}
+.nomad-in__line {
+  color: #ad3621;
+  font-size: 1.3rem;
+}
+.nomad-nav {
+  display: flex;
+  padding-top: 2em;
+}
+.nomad-nav__items * {
+  font-weight: 100;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-right: 2em;
+}
+.nomad-calender-title {
+  font-size: 2rem;
+}
+.nomad-event-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30em, 0.8fr));
+}
+.nomad-event-info {
+  padding: 2em;
+  margin-top: 1em;
+}
+.nomad-date-time {
+  color: #ad3621;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+.nomad-event-title {
+  font-family: "IM Fell English SC", serif;
+  font-size: 1.9rem;
+  color: #333;
+}
+.nomad-event-desc {
+  line-height: 1.65;
+  color: #555;
+}
+.nomad-buy-wrap {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.nomad-buy-btn {
+  padding: 0.5rem 1.25rem;
+  background-image: linear-gradient(
+    to left bottom,
+    #ad3621,
+    #a54821,
+    #9e5626,
+    #97612f,
+    #906b3c
+  );
+  color: #fff;
+  border-radius: 0.5rem;
+  margin-right: 1em;
+}
+.nomad-price,
+.nomad-tickets {
+  margin-right: 1em;
+  color: #333;
+}

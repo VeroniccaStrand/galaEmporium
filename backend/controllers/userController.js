@@ -98,7 +98,6 @@ export const updateUser = async (req, res) => {
 export const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
-    console.log("öalskdölask");
     // hitta användaren
     const user = await User.findOne({ email });
     //om inte user finns eller inte lösenord matchar

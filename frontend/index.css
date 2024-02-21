@@ -3,9 +3,11 @@
 @import url("./pages/natureNomads/nomads.css");
 @import url("./pages/MassiveMashupClub/mmc.css");
 @import url("./pages/whiskeyTasting/whiskey.css");
+@import url("./pages/dandelionJazzClub/dandelion.css");
 @import url("./pages/comedyClub/comedyClub.css");
 @import url("./pages/createEvent/createForm.css");
 @import url("./pages/login/loginReg.css");
+@import url("./pages/myPage/myPage.css");
 
 /*SIMPLE RESET CSS*/
 *,
