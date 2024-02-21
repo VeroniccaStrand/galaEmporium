@@ -54,10 +54,9 @@ export default async function comedyClub(clubId = "65cf58a9b0b90da0c98c308e") {
                 <span class="price">Price: ${event.price}kr</span>
                 <span class="tickets">Tickets left: ${event.tickets}</span>
                 <button class='buy-btn'>Buy Ticket</button>
-<!--                 <button onclick="buyTicket('${
-          event._id
-        }')" class='nomad-buy-btn'>Book Ticket</button>
-      -->
+                <button onclick="buyTicket('${event._id
+                }')" class='comedy-buy-btn'>Book Ticket</button>
+      
               </div>
             </div>
           </div>
@@ -67,7 +66,7 @@ export default async function comedyClub(clubId = "65cf58a9b0b90da0c98c308e") {
 
     console.log(events);
     return ` 
-      <div id="comedy_wrap">
+      <div class="comedy_wrap">
         <header class="comedy_header">
         <nav class="comedy_nav">
           <div class="comedy_nav__items">
