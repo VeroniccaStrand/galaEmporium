@@ -29,15 +29,16 @@ export default async function myPage() {
       },
     });
 
-    // Konvertera svaret till JSON-format
+    // Konvertera  svaret till JSON-format
     const tickets = await response.json();
-
-    // Kontrollera om förfrågan var framgångsrik
-    if (!response.ok) {
-      console.error("Error fetching events:", response.statusText);
-      // Returnera ett felmeddelande om data inte kunde hämtas från databasen
-      return "Error fetching data from the database";
-    }
+    
+      // Kontrollera om förfrågan var framgångsrik
+      if (response.status !== 200) {
+        // Visa en alert för att informera användaren om att det uppstod ett fel
+        alert(`You have to log in to see your tickets: ${response.statusText}`);
+        
+       return;
+      }
 
     // Skapa HTML-kod för varje biljett och lägg till i userTickets
     const userTickets = tickets
