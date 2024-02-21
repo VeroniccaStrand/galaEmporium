@@ -60,7 +60,7 @@ async function login() {
       const userName = responseData.user.userName; 
       alert(`Welcome, ${userName}!`)
       location.href = "";
-   
+      localStorage.setItem("userName", userName);
     }
   } catch (error) {}
 }
