@@ -1,22 +1,41 @@
-.ticketInfo-container {
+.myPage-container {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  color: white;
-  font-family: "Oswald", sans-serif;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
+  font-family: poppins;
+  margin-top: 2em;
+}
+.myPage {
+  max-width: 50em;
+  background-color: #fff;
+  padding: 2em;
+}
+.ticketInfo-container {
+  border: 1px solid gray;
+  padding: 0.5em;
+  margin: 1em;
 }
 
 .ticketInfo-dateTime {
-  padding: var(--padding-small);
-  font-size: 1.5rem;
-  font-weight: 900;
-  text-align: center;
+  color: rgb(166, 5, 5);
 }
-
-.ticketInfo-title {
-  font-size: var(--fs-large);
-  letter-spacing: 1.5px;
+.logOut-btn {
+  padding: 0.5em 1.75em;
+  background-image: linear-gradient(
+    to right top,
+    #4f6666,
+    #4e6767,
+    #4d6969,
+    #4c6a6a,
+    #4b6b6b,
+    #486767,
+    #456263,
+    #425e5f,
+    #3c5454,
+    #364a4a,
+    #304040,
+    #2a3636
+  );
+  border-radius: 0.2em;
+  color: #fff;
+  cursor: pointer;
 }

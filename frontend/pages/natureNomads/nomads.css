@@ -42,7 +42,7 @@
 }
 .nomad-event-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30em, 0.8fr));
+  grid-template-columns: repeat(auto-fit, minmax(35em, 0.8fr));
 }
 .nomad-event-info {
   padding: 2em;
@@ -81,6 +81,17 @@
   color: #fff;
   border-radius: 0.5rem;
   margin-right: 1em;
+  cursor: pointer;
+}
+.nomad-buy-btn:hover {
+  background-image: linear-gradient(
+    to left bottom,
+    #8a2b18,
+    #874219,
+    #7d4d1e,
+    #735827,
+    #695a34
+  );
 }
 .nomad-price,
 .nomad-tickets {
