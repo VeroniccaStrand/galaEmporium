@@ -1,7 +1,6 @@
 import User from "../models/userModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-//const salt = "saltamera";
 
 // create
 export const createUser = async (req, res) => {
