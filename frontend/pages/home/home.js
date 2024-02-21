@@ -58,7 +58,7 @@ export default async function home() {
              <a href="#comedyClub"><img src="images/cclogo.png" alt="Comedy club logo" height="150px" width="150px"></a>
              <a href="#whiskey"><img src="images/wtlogo.png" alt="Whisky Tasting logo" height="150px" width="150px"></a>
              <a href="#massiveMashup"><img src="images/mmlogo.png" alt="Mashup logo" height="150px" width="150px"></a>
-             <a href="#dandelion"><img src="images/djclogo.png" alt="Dandelion" height="150px" width="150px"></a>
+             <a href="#dandelion"><img src="images/djclogo2.png" alt="Dandelion" height="150px" width="150px"></a>
             </div>
             
             <div id="calendar">
