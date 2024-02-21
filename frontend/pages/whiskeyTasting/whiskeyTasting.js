@@ -52,7 +52,8 @@ export default async function whiskey(clubId = "65cc850c06d63a19fc2aa1fd") {
               <div class="buy-wrap">
                 <span class="price">Price: ${event.price}kr</span>
                 <span class="tickets">Tickets left: ${event.tickets}</span>
-                <button onclick="buyTicket('${event._id
+                <button onclick="buyTicket('${
+                  event._id
                 }')" class='whiskey_buy_btn'>Book Ticket</button>
 
               </div>
