@@ -28,7 +28,7 @@
 #calendar {
   margin: var(--margin-large);
   padding: var(--padding-medium);
-  border: solid 2px black;
+  border: solid 2px rgb(255, 255, 255);
   background-color: #222;
   font-family: "Oswald", sans-serif;
   opacity: 0.9;
