@@ -7,6 +7,13 @@
   color: white;
   font-family: "Oswald", sans-serif;
   font-size: larger;
+  position: relative;
+}
+#loggedInUser {
+  position: absolute;
+  top: -7.8em;
+  right: 5em;
+  z-index: 10;
 }
 
 #title {
@@ -32,7 +39,6 @@
   background-color: #222;
   font-family: "Oswald", sans-serif;
   opacity: 0.9;
-
 }
 
 .event-card {
@@ -44,7 +50,6 @@
 }
 
 .allEvents-event-title {
-
   font-size: var(--fs-large);
   letter-spacing: 1.5px;
   color: rgb(255, 255, 255);

@@ -87,12 +87,13 @@ export async function logOut() {
 
     // Kontrollera om utloggningen var framgångsrik
     if (!response.ok) {
+      
       return;
     }
 
     // Ta bort autentiseringscookie från webbläsaren
     document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-
+    localStorage.removeItem('userName');
     // Ladda om sidan för att uppdatera användarens inloggningsstatus
     window.location.href = "";
   } catch (error) {

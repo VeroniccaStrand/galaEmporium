@@ -35,9 +35,7 @@ export default function createEventForm() {
         <label class='create-label' for="eventPrice">Event Price:</label>
         <input type="number" id="eventPrice" name="eventPrice" required />
 
-        <!-- Bild för eventet -->
-        <label class='create-label' for="eventImage">Event Image:</label>
-        <input type="file" id="eventImage" name="eventImage" accept="image/*" />
+       
 
         <!-- Knapp för att skapa event -->
         <input type="submit" id="createEventButton" value="Create Event" />
@@ -58,7 +56,7 @@ async function submitCreateEventForm() {
     desc: $("#eventDescription").val(),
     tickets: $("#ticketCount").val(),
     price: $("#eventPrice").val(),
-    media: $("#eventImage")[0].files[0], // Bild för eventet
+  
   };
 
   try {
@@ -83,7 +81,7 @@ async function submitCreateEventForm() {
       $("#eventDescription").val("");
       $("#ticketCount").val("");
       $("#eventPrice").val("");
-      $("#eventImage").val("");
+
       console.log("Event created successfully");
     } else {
       // Visa felmeddelande om det uppstår problem med att skapa eventet
@@ -92,6 +90,7 @@ async function submitCreateEventForm() {
   } catch (error) {
     // Hantera eventuella fel vid skapande av event
     console.error("Error creating Event:", error);
+    
   }
 }
 

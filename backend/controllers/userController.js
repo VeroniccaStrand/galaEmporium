@@ -152,6 +152,7 @@ export const generateToken = (user) => {
     id: user._id,
     email: user.email,
     role: user.role,
+    userName: user.userName,
   };
 
   if (user.role === "Club Admin" && user.clubId) {

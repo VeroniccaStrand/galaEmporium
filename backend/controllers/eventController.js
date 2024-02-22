@@ -5,7 +5,7 @@ import { loginUser } from "./userController.js";
 // Skapa ett evenemang
 export const createEvent = async (req, res) => {
   try {
-    const { name, dateTime, desc, tickets, media, price } = req.body;
+    const { name, dateTime, desc, tickets,  price } = req.body;
     const token = req.cookies.token;
 
     // Kontrollera om nödvändig information finns
@@ -32,7 +32,7 @@ export const createEvent = async (req, res) => {
       dateTime,
       desc,
       tickets,
-      media,
+      
       price,
     });
 
@@ -43,6 +43,7 @@ export const createEvent = async (req, res) => {
       res.status(500).json({ message: "Misslyckades med att skapa evenemang." });
     }
   } catch (error) {
+    console.error("Error creating Event:", error);
     console.error("Fel vid skapande av evenemang", error);
     res.status(500).json({ error: "Internt serverfel." });
   }
