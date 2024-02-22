@@ -19,7 +19,8 @@
   }
 
   .comedy_wrap {
-    background-color: white;
+    background-color: #393433;
+    padding-bottom: var(--padding-large);
   }
 
   .comedy_header {
@@ -32,10 +33,10 @@
   }
   .comedy_nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.391);
-    padding: var(--padding-medium);
+    padding: var(--padding-small);
     color: #f5f5f5;
     font-family: var(--ff-roboto-slab);
   }
@@ -67,7 +68,7 @@
     font-size: var(--fs-medium);
     margin-left: var(--margin-large);
     margin-top: var(--margin-large);
-    color: #d9b41e;
+    color: #4d1ed9;
     max-width: 30ch;
     font-family: var(--ff-english);
     text-shadow: 5px 5px 10px #000000;
