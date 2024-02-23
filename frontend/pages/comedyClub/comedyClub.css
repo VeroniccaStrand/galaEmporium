@@ -19,7 +19,8 @@
   }
 
   .comedy_wrap {
-    background-color: #393433;
+    background-color: #928a88d4;
+    opacity: 0.95;
     padding-bottom: var(--padding-large);
   }
 
@@ -56,19 +57,20 @@
     /*z-index: 2;*/
     color: #f5f5f5;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-end;
     min-height: 28em;
   }
   .comedy_banner {
     font-size: var(--fs-xlarge);
-    margin-left: var(--margin-large);
+    text-align: center;
     color: #232121;
   }
   .comedy_slogan {
     font-size: var(--fs-medium);
     margin-left: var(--margin-large);
     margin-top: var(--margin-large);
-    color: #4d1ed9;
+    color: #0a0419;
     max-width: 30ch;
     font-family: var(--ff-english);
     text-shadow: 5px 5px 10px #000000;
@@ -96,6 +98,26 @@
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     z-index: -1;
+  }
+
+  #comedy_about_us {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about_us_title {
+    text-align: center;
+    margin-top: var(--margin-large);
+    font-size: var(--fs-large);
+  }
+
+  .about_us_story {
+    text-align: center;
+    width: 50%;
+    margin-top: var(--margin-large);
   }
 
   .comedy_calender-title {

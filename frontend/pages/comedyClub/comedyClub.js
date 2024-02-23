@@ -71,7 +71,7 @@ export default async function comedyClub(clubId = "65cf58a9b0b90da0c98c308e") {
         <nav class="comedy_nav">
           <div class="comedy_nav__items">
             <a href="#comedyClub">The Comedy Club</a>
-            <a href="#">About us</a>
+            <a href="#comedy_about_us">About us</a>
             <a href="#create">Create Event</a>
             <a href="#">Contact us</a>
           </div>
@@ -90,7 +90,19 @@ export default async function comedyClub(clubId = "65cf58a9b0b90da0c98c308e") {
             
           </p>
         </div>
+      
+      
+
       </header>
+        <section id="comedy_about_us">
+          <h1 class="about_us_title">About us</h1>
+            <p class="about_us_story">
+            Welcome to The Comedy Club - your laughter destination in the heart of the city!
+            At The Comedy Club, we're dedicated to creating unforgettable moments through humor. Our intimate venue hosts a diverse lineup of comedians, promising a night of side-splitting humor that caters to all tastes.    
+            Step into our warm and welcoming space, adorned with quirky decor for a night of pure hilarity. Whether you're a comedy enthusiast or a first-timer, The Comedy Club is the perfect place to unwind, share a few laughs, and make lasting memories. 
+            Join us at The Comedy Club - where joy takes center stage, and the punchlines never stop!
+            </p>
+        </section>
         <h2 class='comedy_calender-title'> Upcoming events </h2>
         <div class="comedy_event-container">
           ${eventCards}
